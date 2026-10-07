@@ -271,60 +271,60 @@ export function Login({ onLogin }: LoginProps) {
 
   if (!selectedType) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-6 flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white px-4 py-8 sm:p-6 flex flex-col items-center justify-center">
         <div className="max-w-md w-full">
           {/* Logo */}
-          <div className="text-center mb-12">
-            <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Heart className="w-12 h-12 text-white" />
+          <div className="text-center mb-6 sm:mb-10">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-md">
+              <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
             </div>
-            <h1 className="text-blue-900 mb-3">Cuida Fácil</h1>
-            <p className="text-gray-600 text-xl">Bem-vindo! Como você deseja acessar?</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-2">Cuida Fácil</h1>
+            <p className="text-gray-600 text-base sm:text-lg">Bem-vindo! Como você deseja acessar?</p>
           </div>
 
           {/* User Type Selection */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <button
               onClick={() => setSelectedType('user')}
-              className="w-full bg-white rounded-2xl p-6 shadow-lg border-2 border-blue-200 hover:border-blue-400 transition-all active:scale-95"
+              className="w-full bg-white rounded-2xl p-4 sm:p-5 shadow-md border-2 border-blue-200 hover:border-blue-400 transition-all active:scale-95"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <User className="w-8 h-8 text-blue-600" />
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <User className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
                 </div>
-                <div className="text-left flex-1">
-                  <h2 className="text-blue-900 mb-1">Sou Usuário</h2>
-                  <p className="text-gray-600">Preciso de cuidador ou transporte</p>
+                <div className="text-left flex-1 min-w-0">
+                  <h2 className="text-lg sm:text-xl font-semibold text-blue-900 mb-0.5">Sou Usuário</h2>
+                  <p className="text-gray-600 text-sm sm:text-base">Preciso de cuidador ou transporte</p>
                 </div>
               </div>
             </button>
 
             <button
               onClick={() => setSelectedType('tutor')}
-              className="w-full bg-white rounded-2xl p-6 shadow-lg border-2 border-purple-200 hover:border-purple-400 transition-all active:scale-95"
+              className="w-full bg-white rounded-2xl p-4 sm:p-5 shadow-md border-2 border-purple-200 hover:border-purple-400 transition-all active:scale-95"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Users className="w-8 h-8 text-purple-600" />
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Users className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
                 </div>
-                <div className="text-left flex-1">
-                  <h2 className="text-purple-900 mb-1">Sou Tutor</h2>
-                  <p className="text-gray-600">Cuido de um ou mais familiares</p>
+                <div className="text-left flex-1 min-w-0">
+                  <h2 className="text-lg sm:text-xl font-semibold text-purple-900 mb-0.5">Sou Tutor</h2>
+                  <p className="text-gray-600 text-sm sm:text-base">Cuido de um ou mais familiares</p>
                 </div>
               </div>
             </button>
 
             <button
               onClick={() => setSelectedType('partner')}
-              className="w-full bg-white rounded-2xl p-6 shadow-lg border-2 border-green-200 hover:border-green-400 transition-all active:scale-95"
+              className="w-full bg-white rounded-2xl p-4 sm:p-5 shadow-md border-2 border-green-200 hover:border-green-400 transition-all active:scale-95"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Briefcase className="w-8 h-8 text-green-600" />
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
                 </div>
-                <div className="text-left flex-1">
-                  <h2 className="text-green-900 mb-1">Sou Parceiro</h2>
-                  <p className="text-gray-600">Cuidador ou motorista</p>
+                <div className="text-left flex-1 min-w-0">
+                  <h2 className="text-lg sm:text-xl font-semibold text-green-900 mb-0.5">Sou Parceiro</h2>
+                  <p className="text-gray-600 text-sm sm:text-base">Cuidador ou motorista</p>
                 </div>
               </div>
             </button>
@@ -335,52 +335,52 @@ export function Login({ onLogin }: LoginProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-6 flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white px-4 py-6 sm:p-6 flex flex-col items-center">
       <div className="max-w-md w-full">
         {/* Back Button - Always Visible */}
         <button
           onClick={() => setSelectedType(null)}
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-800 mb-6 active:opacity-70"
+          className="flex items-center gap-2 text-gray-600 hover:text-gray-800 mb-4 sm:mb-6 active:opacity-70"
         >
-          <ArrowLeft className="w-6 h-6" />
-          <span className="text-lg">Voltar</span>
+          <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          <span className="text-base sm:text-lg">Voltar</span>
         </button>
 
-        <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Heart className="w-10 h-10 text-white" />
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-md">
+            <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
           </div>
-          <h1 className="text-blue-900 mb-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-blue-900 mb-1">
             {selectedType === 'user' && 'Cadastro de Usuário'}
             {selectedType === 'tutor' && 'Cadastro de Tutor'}
             {selectedType === 'partner' && 'Cadastro de Parceiro'}
           </h1>
-          <p className="text-gray-600">Preencha seus dados para continuar</p>
+          <p className="text-gray-600 text-sm sm:text-base">Preencha seus dados para continuar</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-lg p-6 max-h-[70vh] overflow-y-auto">
+        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 mb-8">
           <div className="space-y-4">
             {/* Dados Pessoais */}
-            <div className="pb-3 border-b-2 border-gray-100">
-              <h3 className="text-gray-900 mb-3">Dados Pessoais</h3>
+            <div className="pb-2 border-b-2 border-gray-100">
+              <h3 className="text-gray-900 font-semibold mb-1 text-base sm:text-lg">Dados Pessoais</h3>
             </div>
 
             <div>
-              <label className="text-gray-700 mb-2 block">Nome completo *</label>
+              <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Nome completo *</label>
               <input
                 type="text"
                 required
                 placeholder="Seu nome completo"
                 value={name}
                 onChange={handleNameChange}
-                className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
               />
-              {nameError && <p className="text-red-500 text-sm mt-2">{nameError}</p>}
+              {nameError && <p className="text-red-500 text-sm mt-1">{nameError}</p>}
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
-                <label className="text-gray-700 mb-2 block">CPF *</label>
+                <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">CPF *</label>
                 <input
                   type="text"
                   required
@@ -388,24 +388,24 @@ export function Login({ onLogin }: LoginProps) {
                   value={cpf}
                   onChange={handleCpfChange}
                   maxLength={14}
-                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
                 />
               </div>
 
               <div>
-                <label className="text-gray-700 mb-2 block">Data de Nasc. *</label>
+                <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Data de Nasc. *</label>
                 <input
                   type="date"
                   required
                   value={birthDate}
                   onChange={(e) => setBirthDate(e.target.value)}
-                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-gray-700 mb-2 block">Telefone *</label>
+              <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Telefone *</label>
               <input
                 type="tel"
                 required
@@ -413,57 +413,57 @@ export function Login({ onLogin }: LoginProps) {
                 value={phone}
                 onChange={handlePhoneChange}
                 maxLength={15}
-                className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
               />
             </div>
 
             <div>
-              <label className="text-gray-700 mb-2 block">Email *</label>
+              <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Email *</label>
               <input
                 type="email"
                 required
                 placeholder="seu@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
               />
             </div>
 
             {selectedType === 'partner' && (
               <>
                 <div>
-                  <label className="text-gray-700 mb-2 block">RG ou CNH *</label>
+                  <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">RG ou CNH *</label>
                   <input
                     type="text"
                     required
                     placeholder="00.000.000-0"
                     value={rg}
                     onChange={(e) => setRg(e.target.value)}
-                    className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                    className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
                   />
                 </div>
 
                 <div>
-                  <label className="text-gray-700 mb-2 block">Dados Bancários (Banco/Agência/Conta)</label>
+                  <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Dados Bancários (Banco/Agência/Conta)</label>
                   <input
                     type="text"
                     placeholder="Ex: Banco do Brasil - Ag 1234 - C/C 12345-6"
                     value={bankAccount}
                     onChange={(e) => setBankAccount(e.target.value)}
-                    className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                    className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
                   />
                 </div>
               </>
             )}
 
             {/* Endereço */}
-            <div className="pt-3 pb-3 border-t-2 border-gray-100">
-              <h3 className="text-gray-900 mb-3">Endereço</h3>
+            <div className="pt-3 pb-2 border-t-2 border-gray-100">
+              <h3 className="text-gray-900 font-semibold mb-1 text-base sm:text-lg">Endereço</h3>
             </div>
 
             <div>
-              <label className="text-gray-700 mb-2 block">CEP *</label>
-              <div className="flex gap-3">
+              <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">CEP *</label>
+              <div className="flex gap-2 sm:gap-3">
                 <input
                   type="text"
                   required
@@ -471,84 +471,84 @@ export function Login({ onLogin }: LoginProps) {
                   onChange={handleCepChange}
                   placeholder="00000-000"
                   maxLength={9}
-                  className="flex-1 px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                  className="flex-1 min-w-0 px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
                 />
                 <button
                   type="button"
                   onClick={searchCep}
                   disabled={isSearchingCep}
-                  className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center gap-2"
+                  className="px-4 sm:px-6 py-3 sm:py-3.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-1.5 sm:gap-2 text-sm sm:text-base whitespace-nowrap active:scale-95 flex-shrink-0"
                 >
-                  <Search className="w-5 h-5" />
+                  <Search className="w-4 h-4 sm:w-5 sm:h-5" />
                   {isSearchingCep ? 'Buscando...' : 'Buscar'}
                 </button>
               </div>
             </div>
 
             <div>
-              <label className="text-gray-700 mb-2 block">Rua/Avenida *</label>
+              <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Rua/Avenida *</label>
               <input
                 type="text"
                 required
                 placeholder="Nome da rua"
                 value={street}
                 onChange={(e) => setStreet(e.target.value)}
-                className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
-                <label className="text-gray-700 mb-2 block">Número *</label>
+                <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Número *</label>
                 <input
                   type="text"
                   required
                   placeholder="123"
                   value={number}
                   onChange={(e) => setNumber(e.target.value)}
-                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
                 />
               </div>
 
               <div>
-                <label className="text-gray-700 mb-2 block">Complemento</label>
+                <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Complemento</label>
                 <input
                   type="text"
                   placeholder="Apto 45"
                   value={complement}
                   onChange={(e) => setComplement(e.target.value)}
-                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-gray-700 mb-2 block">Bairro *</label>
+              <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Bairro *</label>
               <input
                 type="text"
                 required
                 placeholder="Nome do bairro"
                 value={neighborhood}
                 onChange={(e) => setNeighborhood(e.target.value)}
-                className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="text-gray-700 mb-2 block">Cidade *</label>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              <div className="sm:col-span-2">
+                <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Cidade *</label>
                 <input
                   type="text"
                   required
                   placeholder="Cidade"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                  className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
                 />
               </div>
 
-              <div>
-                <label className="text-gray-700 mb-2 block">Estado *</label>
+              <div className="sm:col-span-1">
+                <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Estado *</label>
                 <input
                   type="text"
                   required
@@ -556,33 +556,33 @@ export function Login({ onLogin }: LoginProps) {
                   maxLength={2}
                   value={state}
                   onChange={(e) => setState(e.target.value.toUpperCase())}
-                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg uppercase"
+                  className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base uppercase"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-gray-700 mb-2 block">Ponto de Referência</label>
+              <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Ponto de Referência</label>
               <input
                 type="text"
                 placeholder="Ex: Próximo ao supermercado"
                 value={reference}
                 onChange={(e) => setReference(e.target.value)}
-                className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg"
+                className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
               />
             </div>
 
             {selectedType === 'tutor' && (
               <>
                 <div className="pt-3 border-t-2 border-gray-100">
-                  <label className="text-gray-700 mb-2 block">
+                  <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">
                     Qual o seu relacionamento com o paciente? *
                   </label>
                   <select
                     required
                     value={relationship}
                     onChange={(e) => setRelationship(e.target.value)}
-                    className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-lg bg-white"
+                    className="w-full px-3.5 sm:px-4 py-3 sm:py-3.5 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base bg-white"
                   >
                     <option value="">Selecione...</option>
                     {relationshipOptions.map((option) => (
@@ -598,12 +598,12 @@ export function Login({ onLogin }: LoginProps) {
             {selectedType === 'partner' && (
               <>
                 <div className="pt-3 border-t-2 border-gray-100">
-                  <label className="text-gray-700 mb-2 block">Tipo de serviço *</label>
+                  <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Tipo de serviço *</label>
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       type="button"
                       onClick={() => setPartnerType('caregiver')}
-                      className={`py-3 rounded-xl border-2 transition-all ${
+                      className={`py-3 rounded-xl border-2 font-medium text-sm sm:text-base transition-all ${
                         partnerType === 'caregiver'
                           ? 'bg-blue-50 border-blue-500 text-blue-700'
                           : 'border-gray-200 text-gray-700 hover:border-gray-300'
@@ -614,7 +614,7 @@ export function Login({ onLogin }: LoginProps) {
                     <button
                       type="button"
                       onClick={() => setPartnerType('driver')}
-                      className={`py-3 rounded-xl border-2 transition-all ${
+                      className={`py-3 rounded-xl border-2 font-medium text-sm sm:text-base transition-all ${
                         partnerType === 'driver'
                           ? 'bg-green-50 border-green-500 text-green-700'
                           : 'border-gray-200 text-gray-700 hover:border-gray-300'
@@ -626,19 +626,19 @@ export function Login({ onLogin }: LoginProps) {
                 </div>
 
                 <div>
-                  <label className="flex items-center gap-2 text-gray-700 mb-3">
-                    <Clock className="w-5 h-5" />
+                  <label className="flex items-center gap-2 text-gray-700 mb-2 text-sm sm:text-base">
+                    <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
                     Dias disponíveis *
                   </label>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     {weekDays.map((day) => (
                       <button
                         key={day.id}
                         type="button"
                         onClick={() => toggleDay(day.id)}
-                        className={`py-3 px-4 rounded-xl border-2 transition-all ${
+                        className={`py-2.5 px-3 rounded-xl border-2 text-sm sm:text-base transition-all ${
                           selectedDays.includes(day.id)
-                            ? 'bg-green-50 border-green-500 text-green-700'
+                            ? 'bg-green-50 border-green-500 text-green-700 font-medium'
                             : 'border-gray-200 text-gray-700 hover:border-gray-300'
                         }`}
                       >
@@ -647,29 +647,29 @@ export function Login({ onLogin }: LoginProps) {
                     ))}
                   </div>
                   {selectedDays.length === 0 && (
-                    <p className="text-red-500 text-sm mt-2">Selecione pelo menos um dia</p>
+                    <p className="text-red-500 text-xs sm:text-sm mt-1.5">Selecione pelo menos um dia</p>
                   )}
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label className="text-gray-700 mb-2 block">Horário inicial *</label>
+                    <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Horário inicial *</label>
                     <input
                       type="time"
                       required
                       value={startTime}
                       onChange={(e) => setStartTime(e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
                     />
                   </div>
                   <div>
-                    <label className="text-gray-700 mb-2 block">Horário final *</label>
+                    <label className="text-gray-700 mb-1.5 block text-sm sm:text-base">Horário final *</label>
                     <input
                       type="time"
                       required
                       value={endTime}
                       onChange={(e) => setEndTime(e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none"
+                      className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-base"
                     />
                   </div>
                 </div>
@@ -680,7 +680,7 @@ export function Login({ onLogin }: LoginProps) {
           <button
             type="submit"
             disabled={selectedType === 'partner' && selectedDays.length === 0}
-            className="w-full py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors mt-6 mb-4 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3.5 sm:py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors mt-6 text-base sm:text-lg font-medium shadow-md disabled:opacity-50 disabled:cursor-not-allowed active:scale-98"
           >
             Continuar
           </button>
