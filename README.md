@@ -212,6 +212,8 @@ Os arquivos `.gitkeep` mantêm as pastas inicialmente vazias no Git.
 
 ### Colaboração e versionamento
 
+Consulte o [guia de padrões básicos de Git](docs/planejamento/padroes-git.md) para nomes de branches, mensagens de commit, identificação dos autores e fluxo de Pull Requests.
+
 - `main`: reservada para a versão final.
 - `develop`: branch de integração do trabalho da equipe.
 - `feature/...`: branches de funcionalidades, criadas a partir de `develop`.
