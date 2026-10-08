@@ -6,7 +6,7 @@ O Cuida Fácil é uma proposta de aplicação web que conecta pessoas com defici
 
 O projeto será desenvolvido em um Hackathon de Frameworks Front-end, com duração de **4 horas**. A entrega será um **site interativo, sem backend**, que demonstra a jornada do passageiro e do familiar responsável.
 
-> **Status:** estrutura inicial criada. Aplicação, protótipo e documentação detalhada ainda serão desenvolvidos. As funcionalidades descritas abaixo representam o escopo proposto, não funcionalidades já entregues.
+> **Status:** primeira versão do frontend integrada à develop. Validação funcional, protótipo e documentação detalhada estão em andamento. As funcionalidades descritas abaixo representam o escopo proposto, não funcionalidades já entregues.
 >
 > **Branch de trabalho:** `develop`. A `main` fica reservada para a versão final.
 
@@ -148,8 +148,8 @@ O acompanhante representa apoio durante trajetos e compromissos. A proposta não
 |---|---|
 | Git e GitHub | Utilizados para versionamento e colaboração. |
 | GitHub Projects | Quadro Kanban criado para gestão das atividades. |
-| Framework Front-end | A definir pela equipe. |
-| HTML, CSS e JavaScript/TypeScript | Uso e linguagem final a confirmar conforme o framework escolhido. |
+| React | Framework utilizado no frontend; package.json declara ^18.3.1. |
+| Vite, Tailwind CSS e TSX | Ferramentas e arquivos presentes na aplicação atual. |
 | Dados demonstrativos | Previstos para demonstrar o fluxo sem backend. |
 | Armazenamento no navegador | Possibilidade a avaliar para manter solicitações locais. |
 | Plataforma de deploy | A definir. |
@@ -157,21 +157,27 @@ O acompanhante representa apoio durante trajetos e compromissos. A proposta não
 
 ## Framework Utilizado
 
-**A definir pela equipe.**
+**React**, com Vite e componentes em TSX. O package.json declara React ^18.3.1, Vite ^6.3.5 e Tailwind CSS ^4.1.12. As versões instaladas são determinadas pelo package-lock.json.
 
-Esta seção será atualizada com o framework escolhido, sua versão e a justificativa da escolha.
+A justificativa da escolha deverá ser registrada pela equipe.
 
 ## Como Executar
 
-A aplicação ainda não foi inicializada. Portanto, não há comandos de instalação ou execução confirmados.
+O frontend está em **cuida-facil-project/**. Com o repositório clonado e a branch develop selecionada:
 
-O código será organizado em [frontend](frontend/). Após a definição do framework, esta seção deverá conter:
+```bash
+cd cuida-facil-project
+npm ci
+npm run dev
+```
 
-1. Pré-requisitos e versões.
-2. Comandos de instalação.
-3. Comando para iniciar a aplicação.
-4. Endereço local.
-5. Comando para gerar a versão de produção.
+Abra o endereço exibido no terminal. Para gerar a versão de produção:
+
+```bash
+npm run build
+```
+
+Consulte o [guia de execução](docs/planejamento/guia-execucao.md) para pré-requisitos, atualização, visualização do build e resolução de problemas. Os comandos foram conferidos nos arquivos de configuração; sua execução ainda precisa ser validada pela equipe.
 
 ## Protótipo
 
@@ -205,7 +211,8 @@ cuida-facil/
 │   ├── requisitos/           # Requisitos funcionais e não funcionais
 │   ├── user-stories/         # Histórias e critérios de aceitação
 │   └── prototipo/            # Telas e fluxo de navegação
-└── frontend/                 # Aplicação web
+├── frontend/                 # Reserva da estrutura inicial
+└── cuida-facil-project/       # Código atual da aplicação web
 ```
 
 Os arquivos `.gitkeep` mantêm as pastas inicialmente vazias no Git.
@@ -261,7 +268,7 @@ Como não haverá apresentação oral, o README, o protótipo, o quadro de taref
 - [ ] 10 requisitos não funcionais.
 - [ ] User Stories com critérios de aceitação.
 - [ ] Protótipo com no mínimo 10 telas.
-- [ ] Framework escolhido e registrado.
+- [x] Framework escolhido e registrado.
 - [ ] Instruções de execução verificadas.
 - [ ] README revisado para refletir a entrega final.
 - [ ] Links da aplicação, protótipo e Projects preenchidos.
