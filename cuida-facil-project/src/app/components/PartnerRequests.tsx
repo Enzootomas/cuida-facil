@@ -84,23 +84,23 @@ export function PartnerRequests({ onNavigate, currentUser }: PartnerRequestsProp
   const bgColor = partner.type === 'caregiver' ? 'bg-blue-600' : 'bg-green-600';
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pb-8">
       {/* Header */}
-      <div className={`${bgColor} text-white p-6 pb-8`}>
+      <div className={`${bgColor} text-white px-4 py-6 sm:p-6 sm:pb-8`}>
         <button
           onClick={() => onNavigate('partner')}
-          className="flex items-center gap-2 mb-6 active:opacity-70"
+          className="flex items-center gap-2 mb-4 sm:mb-6 active:opacity-70"
         >
-          <ArrowLeft className="w-6 h-6" />
-          <span className="text-lg">Voltar</span>
+          <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          <span className="text-base sm:text-lg">Voltar</span>
         </button>
-        <h1 className="text-white mb-2">Solicitações Pendentes</h1>
-        <p className={partner.type === 'caregiver' ? 'text-blue-100' : 'text-green-100'}>
+        <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1">Solicitações Pendentes</h1>
+        <p className={`${partner.type === 'caregiver' ? 'text-blue-100' : 'text-green-100'} text-sm sm:text-base`}>
           Aceite ou recuse solicitações de serviço
         </p>
       </div>
 
-      <div className="max-w-md mx-auto px-6 -mt-4">
+      <div className="max-w-md mx-auto px-4 sm:px-6 -mt-4 mb-8">
         {requests.length > 0 ? (
           <div className="space-y-4">
             {requests.map((request) => (
