@@ -34,6 +34,17 @@ export default function App() {
     }
   };
 
+  const handleUpdateUser = (updatedData: any) => {
+    setCurrentUser((prev: any) => ({ ...prev, ...updatedData }));
+  };
+
+  const handleDeleteUser = () => {
+    setCurrentUser(null);
+    setUserType(null);
+    setSelectedService(null);
+    setCurrentView('landing');
+  };
+
   const renderView = () => {
     switch (currentView) {
       case 'landing':
@@ -49,11 +60,33 @@ export default function App() {
       case 'appointment':
         return <Appointment onNavigate={setCurrentView} service={selectedService} />;
       case 'profile':
-        return <Profile onNavigate={setCurrentView} service={selectedService} currentUser={currentUser} />;
+        return (
+          <Profile
+            onNavigate={setCurrentView}
+            service={selectedService}
+            currentUser={currentUser}
+            onUpdateUser={handleUpdateUser}
+            onDeleteUser={handleDeleteUser}
+          />
+        );
       case 'tutor':
-        return <TutorDashboard onNavigate={setCurrentView} currentUser={currentUser} />;
+        return (
+          <TutorDashboard
+            onNavigate={setCurrentView}
+            currentUser={currentUser}
+            onUpdateUser={handleUpdateUser}
+            onDeleteUser={handleDeleteUser}
+          />
+        );
       case 'partner':
-        return <PartnerProfile onNavigate={setCurrentView} currentUser={currentUser} />;
+        return (
+          <PartnerProfile
+            onNavigate={setCurrentView}
+            currentUser={currentUser}
+            onUpdateUser={handleUpdateUser}
+            onDeleteUser={handleDeleteUser}
+          />
+        );
       case 'messages':
         return <Messages onNavigate={setCurrentView} userType={userType} />;
       case 'tutor-requests':
