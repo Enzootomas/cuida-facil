@@ -8,8 +8,11 @@ import {
   MessageCircle,
   ChevronDown,
   Edit,
+  Trash2,
   X,
-  Save
+  Check,
+  Save,
+  ShieldAlert
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import type { View } from '../App';
@@ -72,7 +75,7 @@ const patientsData = [
   }
 ];
 
-export function TutorDashboard({ onNavigate, currentUser, onUpdateUser }: TutorDashboardProps) {
+export function TutorDashboard({ onNavigate, currentUser, onUpdateUser, onDeleteUser }: TutorDashboardProps) {
   const [selectedPatient, setSelectedPatient] = useState(patientsData[0]);
   const [showPatientDropdown, setShowPatientDropdown] = useState(false);
 
@@ -85,6 +88,8 @@ export function TutorDashboard({ onNavigate, currentUser, onUpdateUser }: TutorD
 
   const [tutor, setTutor] = useState(() => currentUser || defaultTutor);
   const [isEditing, setIsEditing] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [notification, setNotification] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
   const [editForm, setEditForm] = useState({
     name: tutor.name || '',
@@ -154,6 +159,22 @@ export function TutorDashboard({ onNavigate, currentUser, onUpdateUser }: TutorD
     setTutor(updated);
     onUpdateUser?.(updated);
     setIsEditing(false);
+    setNotification({
+      type: 'success',
+      message: 'Perfil de tutor atualizado com sucesso!'
+    });
+    setTimeout(() => {
+      setNotification(null);
+    }, 4000);
+  };
+
+  const handleConfirmDelete = () => {
+    setShowDeleteConfirm(false);
+    if (onDeleteUser) {
+      onDeleteUser();
+    } else {
+      onNavigate('landing');
+    }
   };
 
   return (
@@ -188,6 +209,22 @@ export function TutorDashboard({ onNavigate, currentUser, onUpdateUser }: TutorD
       </div>
 
       <div className="max-w-md mx-auto px-6 -mt-4 space-y-6">
+        {/* Notification Toast */}
+        {notification && (
+          <div className="bg-green-500 text-white px-4 py-3 rounded-xl shadow-lg flex items-center justify-between animate-fade-in">
+            <div className="flex items-center gap-3">
+              <Check className="w-5 h-5 flex-shrink-0" />
+              <span className="text-sm font-medium">{notification.message}</span>
+            </div>
+            <button
+              onClick={() => setNotification(null)}
+              className="p-1 hover:bg-green-600 rounded-lg transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
         {/* Patient Selector */}
         <div className="bg-white rounded-2xl shadow-lg p-5">
           <p className="text-gray-600 text-sm mb-2 font-medium">Paciente selecionado:</p>
@@ -245,6 +282,35 @@ export function TutorDashboard({ onNavigate, currentUser, onUpdateUser }: TutorD
               <MapPin className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
               <span>{selectedPatient.address}</span>
             </div>
+          </div>
+        </div>
+
+        {/* Account Management Card (Editar e Excluir Perfil do Tutor) */}
+        <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+          <div className="flex items-center gap-2 mb-2">
+            <ShieldAlert className="w-5 h-5 text-gray-600" />
+            <h3 className="font-semibold text-gray-900">Gerenciar Perfil do Tutor</h3>
+          </div>
+          <p className="text-gray-500 text-sm mb-4">
+            Atualize seus dados de contato ou encerre sua conta de tutor.
+          </p>
+
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={handleOpenEdit}
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-purple-50 hover:bg-purple-100 text-purple-700 font-semibold rounded-xl transition-all active:scale-98"
+            >
+              <Edit className="w-4 h-4 text-purple-600" />
+              <span>Editar Perfil</span>
+            </button>
+
+            <button
+              onClick={() => setShowDeleteConfirm(true)}
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-red-50 hover:bg-red-100 text-red-600 font-semibold rounded-xl border border-red-200 transition-all active:scale-98"
+            >
+              <Trash2 className="w-4 h-4 text-red-600" />
+              <span>Excluir Perfil Atual</span>
+            </button>
           </div>
         </div>
 
@@ -433,6 +499,38 @@ export function TutorDashboard({ onNavigate, currentUser, onUpdateUser }: TutorD
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {showDeleteConfirm && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 text-center animate-scale-up">
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 text-red-600">
+              <Trash2 className="w-8 h-8" />
+            </div>
+
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Excluir Perfil Atual?</h3>
+            <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+              Tem certeza que deseja excluir seu perfil de tutor (<strong className="text-gray-900">{tutor.name}</strong>)?
+              Esta ação é <strong>irreversível</strong> e você perderá o acesso ao acompanhamento dos pacientes.
+            </p>
+
+            <div className="flex flex-col gap-2.5">
+              <button
+                onClick={handleConfirmDelete}
+                className="w-full py-3 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl text-sm transition-colors active:scale-95 shadow-md shadow-red-200"
+              >
+                Sim, excluir perfil
+              </button>
+              <button
+                onClick={() => setShowDeleteConfirm(false)}
+                className="w-full py-3 px-4 border-2 border-gray-200 hover:bg-gray-100 text-gray-700 font-semibold rounded-xl text-sm transition-colors"
+              >
+                Cancelar
+              </button>
+            </div>
           </div>
         </div>
       )}
