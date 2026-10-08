@@ -297,6 +297,24 @@ export function PartnerProfile({ onNavigate, currentUser }: PartnerProfileProps)
           </div>
         </div>
       </div>
+
+      {/* Navigation Footer */}
+      <div className="mt-8 pt-8 border-t border-gray-200">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button
+            onClick={() => onNavigate('landing')}
+            className="flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-colors"
+          >
+            Voltar para Página Inicial
+          </button>
+          <button
+            onClick={() => onNavigate('landing')}
+            className="flex items-center gap-2 px-6 py-3 bg-purple-100 text-purple-700 rounded-xl hover:bg-purple-200 transition-colors"
+          >
+            Trocar de Conta
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
