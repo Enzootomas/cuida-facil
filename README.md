@@ -6,9 +6,11 @@ O Cuida Fácil é uma proposta de aplicação web que conecta pessoas com defici
 
 O projeto será desenvolvido em um Hackathon de Frameworks Front-end, com duração de **4 horas**. A entrega será um **site interativo, sem backend**, que demonstra a jornada do passageiro e do familiar responsável.
 
-> **Status:** primeira versão do frontend integrada à develop. Validação funcional, protótipo e documentação detalhada estão em andamento. As funcionalidades descritas abaixo representam o escopo proposto, não funcionalidades já entregues.
+> **Status:** frontend publicado na Vercel. O endereço respondeu com HTTP 200 sem autenticação em 08/10/2026. A validação das funcionalidades, da responsividade e das demais entregas continua pendente.
 >
-> **Branch de trabalho:** `develop`. A `main` fica reservada para a versão final.
+> **Aplicação:** [Abrir Cuida Fácil](https://cuida-facil-qckjx199m-enzootomas-projects.vercel.app)
+>
+> **Branch de trabalho:** `develop`. A `main` contém a versão destinada à publicação na Vercel.
 
 ## Navegação
 
@@ -159,7 +161,7 @@ O acompanhante representa apoio durante trajetos e compromissos. A proposta não
 | Vite, Tailwind CSS e TSX | Ferramentas e arquivos presentes na aplicação atual. |
 | Dados demonstrativos | Previstos para demonstrar o fluxo sem backend. |
 | Armazenamento no navegador | Possibilidade a avaliar para manter solicitações locais. |
-| Plataforma de deploy | A definir. |
+| Vercel | Publicação do frontend a partir da branch main. |
 | Ferramenta de prototipação | A definir. |
 
 ## Framework Utilizado
@@ -184,7 +186,7 @@ Abra o endereço exibido no terminal. Para gerar a versão de produção:
 npm run build
 ```
 
-Consulte o [guia de execução](docs/planejamento/guia-execucao.md) para pré-requisitos, atualização, visualização do build e resolução de problemas. Os comandos foram conferidos nos arquivos de configuração; sua execução ainda precisa ser validada pela equipe.
+Consulte o [guia de execução](docs/planejamento/guia-execucao.md) para pré-requisitos, atualização, visualização do build e resolução de problemas. A instalação com `npm ci` e a inicialização com `npm run dev` foram confirmadas pelo terminal de Enzo no Windows. O build local e a navegação completa ainda precisam ser registrados pela equipe.
 
 ## Protótipo
 
@@ -199,11 +201,24 @@ O protótipo servirá como referência para a aplicação desenvolvida.
 
 ## Aplicação
 
-- **URL da aplicação publicada:** a preencher após o deploy.
+- **URL da aplicação publicada:** [Cuida Fácil na Vercel](https://cuida-facil-qckjx199m-enzootomas-projects.vercel.app)
 - **URL do repositório:** https://github.com/Enzootomas/cuida-facil
 - **Branch de desenvolvimento:** https://github.com/Enzootomas/cuida-facil/tree/develop
 - **URL do protótipo:** a preencher.
 - **URL do GitHub Projects:** a preencher.
+
+### Configuração do deploy
+
+| Campo da Vercel | Valor |
+|---|---|
+| Production Branch | `main` |
+| Framework Preset | Vite |
+| Root Directory | `cuida-facil-project` |
+| Install Command | `npm ci` |
+| Build Command | `npm run build` |
+| Output Directory | `dist` |
+
+O link acima identifica este deployment. Quando o domínio de produção permanente estiver confirmado, registre-o aqui para compartilhar a versão mais recente. Consulte o [guia de execução e publicação](docs/planejamento/guia-execucao.md) para verificar acesso público e resolver erros de configuração.
 
 ## Processo de Desenvolvimento
 
@@ -228,7 +243,7 @@ Os arquivos `.gitkeep` mantêm as pastas inicialmente vazias no Git.
 
 Consulte o [guia de padrões básicos de Git](docs/planejamento/padroes-git.md) para nomes de branches, mensagens de commit, identificação dos autores e fluxo de Pull Requests.
 
-- `main`: reservada para a versão final.
+- `main`: versão publicada; recebe alterações revisadas da `develop` por Pull Request.
 - `develop`: branch de integração do trabalho da equipe.
 - `feature/...`: branches de funcionalidades, criadas a partir de `develop`.
 - Pull Requests de trabalho deverão ter `develop` como destino.
@@ -261,7 +276,7 @@ Como não haverá apresentação oral, o README, o protótipo, o quadro de taref
 ### Checklist das entregas
 
 - [ ] Aplicação Front-end funcional e responsiva.
-- [ ] Aplicação publicada e acessível pela Internet.
+- [x] Aplicação publicada com resposta HTTP 200 sem autenticação; navegação funcional ainda deve ser verificada.
 - [x] Repositório Git criado.
 - [x] Branch `develop` criada.
 - [x] Estrutura inicial de pastas organizada.
@@ -306,6 +321,7 @@ A responsabilidade pelos cards será atribuída ao integrante definido pela equi
 - Orientações para configuração do repositório e GitHub Projects.
 - Criação da estrutura inicial de pastas e da branch `develop`.
 - Redação e organização deste README e atualização da relação da proposta com os ODS 3 e 10.
+- Orientações de deploy na Vercel, diagnóstico de configuração e atualização da documentação de publicação.
 
 A equipe deverá atualizar este registro caso utilize IA na prototipação, implementação, revisão ou identificação de erros.
 
