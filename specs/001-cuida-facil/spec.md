@@ -7,7 +7,7 @@
 
 ## Contexto e objetivo
 
-O CuidaFácil é uma plataforma digital para facilitar o acesso de pessoas idosas e de pessoas que necessitam de auxílio a serviços de apoio, conectando Usuários a cuidadores e motoristas e oferecendo ferramentas para organizar compromissos de saúde sem realizar diagnóstico ou recomendação médica. Tutores podem auxiliar no acompanhamento somente dentro das permissões concedidas pelo Usuário. O produto está alinhado ao ODS 3 — Saúde e Bem-Estar.
+O CuidaFácil é uma plataforma digital para facilitar o acesso de pessoas idosas e de pessoas que necessitam de auxílio a serviços de apoio, conectando Usuários a cuidadores e motoristas e oferecendo ferramentas para organizar compromissos de saúde sem realizar diagnóstico ou recomendação médica. Tutores podem auxiliar no acompanhamento somente dentro das permissões concedidas pelo Usuário. O produto está alinhado ao ODS 3 — Saúde e bem-estar, ao facilitar a organização do acesso a serviços de saúde, e ao ODS 10 — Redução das desigualdades, ao considerar as necessidades de pessoas com deficiência, mobilidade reduzida e idosos para apoiar sua inclusão e autonomia. Esses alinhamentos representam a proposta de valor; o impacto social ainda não foi validado com usuários.
 
 Esta especificação cobre uma experiência responsiva para desktop, tablet e celular, com landing page, escolha de perfil, cadastros, áreas dos três perfis, busca e solicitação de serviços, acompanhamento, organização de compromissos e notificações. Histórias prioritárias descrevem o valor funcional em incrementos verificáveis; decisões ainda não fornecidas estão listadas para `/speckit.clarify` e não devem ser presumidas durante planejamento ou implementação.
 
