@@ -11,9 +11,10 @@ import {
   Edit,
   Bell,
   UserPlus,
-  X,
-  Save,
   Trash2,
+  X,
+  Check,
+  Save,
   ShieldAlert
 } from 'lucide-react';
 import type { View } from '../App';
@@ -78,6 +79,7 @@ export function Profile({ onNavigate, currentUser, onUpdateUser, onDeleteUser }:
   const [user, setUser] = useState(() => currentUser || defaultUser);
   const [isEditing, setIsEditing] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [notification, setNotification] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
   const [editForm, setEditForm] = useState({
     name: user.name || '',
@@ -155,6 +157,13 @@ export function Profile({ onNavigate, currentUser, onUpdateUser, onDeleteUser }:
     setUser(updatedUser);
     onUpdateUser?.(updatedUser);
     setIsEditing(false);
+    setNotification({
+      type: 'success',
+      message: 'Perfil atualizado com sucesso!'
+    });
+    setTimeout(() => {
+      setNotification(null);
+    }, 4000);
   };
 
   const handleConfirmDelete = () => {
@@ -200,6 +209,22 @@ export function Profile({ onNavigate, currentUser, onUpdateUser, onDeleteUser }:
       </div>
 
       <div className="max-w-md mx-auto px-6 -mt-4 space-y-6">
+        {/* Notification Toast */}
+        {notification && (
+          <div className="bg-green-500 text-white px-4 py-3 rounded-xl shadow-lg flex items-center justify-between animate-fade-in">
+            <div className="flex items-center gap-3">
+              <Check className="w-5 h-5 flex-shrink-0" />
+              <span className="text-sm font-medium">{notification.message}</span>
+            </div>
+            <button
+              onClick={() => setNotification(null)}
+              className="p-1 hover:bg-green-600 rounded-lg transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
         {/* User Info Card */}
         <div className="bg-white rounded-2xl shadow-lg p-6">
           <div className="flex items-center justify-between mb-6">
@@ -351,7 +376,7 @@ export function Profile({ onNavigate, currentUser, onUpdateUser, onDeleteUser }:
                     <span>{appointment.time}</span>
                   </div>
                   <div className="flex items-start gap-2 text-gray-600 text-xs">
-                    <MapPin className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
+                    <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                     <span>{appointment.address}</span>
                   </div>
                 </div>
