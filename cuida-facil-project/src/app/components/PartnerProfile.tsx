@@ -92,9 +92,9 @@ export function PartnerProfile({ onNavigate, currentUser }: PartnerProfileProps)
   const accentColor = partner.type === 'caregiver' ? 'blue' : 'green';
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-8">
+    <div className="h-[100dvh] bg-gray-50 flex flex-col overflow-hidden">
       {/* Header */}
-      <div className={`${bgColor} text-white px-4 py-6 sm:p-6 sm:pb-8`}>
+      <div className={`${bgColor} text-white px-4 py-6 sm:p-6 sm:pb-8 flex-shrink-0 relative z-10 shadow-sm`}>
         <button
           onClick={() => onNavigate('login')}
           className="flex items-center gap-2 mb-4 sm:mb-6 active:opacity-70"
@@ -135,7 +135,8 @@ export function PartnerProfile({ onNavigate, currentUser }: PartnerProfileProps)
         </div>
       </div>
 
-      <div className="max-w-md mx-auto px-4 sm:px-6 -mt-4 mb-8">
+      <div className="flex-1 overflow-y-auto px-4 sm:px-6 pt-2 pb-8">
+        <div className="max-w-md mx-auto -mt-4 relative z-20">
         {/* Profile Card */}
         <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 mb-6">
           <div className="flex items-center gap-4 mb-4">
@@ -296,10 +297,11 @@ export function PartnerProfile({ onNavigate, currentUser }: PartnerProfileProps)
             ))}
           </div>
         </div>
+        </div>
       </div>
 
       {/* Navigation Footer */}
-      <div className="mt-8 pt-8 border-t border-gray-200">
+      <div className="bg-white border-t border-gray-200 p-4 flex-shrink-0">
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={() => onNavigate('landing')}
