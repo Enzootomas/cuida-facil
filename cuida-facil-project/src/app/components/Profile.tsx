@@ -59,9 +59,9 @@ export function Profile({ onNavigate, currentUser }: ProfileProps) {
   const hasPendingRequests = user.pendingTutorRequests && user.pendingTutorRequests.length > 0;
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-8">
+    <div className="h-[100dvh] bg-gray-50 flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="bg-blue-600 text-white px-4 py-6 sm:p-6 sm:pb-8">
+      <div className="bg-blue-600 text-white px-4 py-6 sm:p-6 sm:pb-8 flex-shrink-0 relative z-10 shadow-sm">
         <button
           onClick={() => onNavigate('home')}
           className="flex items-center gap-2 mb-4 sm:mb-6 active:opacity-70"
@@ -88,7 +88,8 @@ export function Profile({ onNavigate, currentUser }: ProfileProps) {
         </div>
       </div>
 
-      <div className="max-w-md mx-auto px-4 sm:px-6 -mt-4 mb-8">
+      <div className="flex-1 overflow-y-auto px-4 sm:px-6 pt-2 pb-8">
+        <div className="max-w-md mx-auto -mt-4 relative z-20">
         {/* User Info */}
         <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 mb-6">
           <div className="flex items-center justify-between mb-6">
@@ -219,12 +220,15 @@ export function Profile({ onNavigate, currentUser }: ProfileProps) {
             </div>
           )}
         </div>
+        </div>
+      </div>
 
-        {/* Navigation & Logout Buttons */}
-        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+      {/* Navigation & Logout Buttons */}
+      <div className="bg-white border-t border-gray-200 p-4 flex-shrink-0">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-md mx-auto w-full">
           <button
             onClick={() => onNavigate('landing')}
-            className="flex-1 py-3 px-4 bg-white border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 hover:text-blue-600 transition-colors flex items-center justify-center gap-2 font-medium shadow-sm active:scale-95"
+            className="flex-1 w-full py-3 px-4 bg-white border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 hover:text-blue-600 transition-colors flex items-center justify-center gap-2 font-medium shadow-sm active:scale-95"
           >
             <ArrowLeft className="w-5 h-5" />
             <span>Voltar para Página Inicial</span>
@@ -232,7 +236,7 @@ export function Profile({ onNavigate, currentUser }: ProfileProps) {
 
           <button
             onClick={() => onNavigate('login')}
-            className="py-3 px-4 bg-red-50 border border-red-200 text-red-600 rounded-xl hover:bg-red-100 transition-colors flex items-center justify-center gap-2 font-medium active:scale-95"
+            className="flex-1 w-full py-3 px-4 bg-red-50 border border-red-200 text-red-600 rounded-xl hover:bg-red-100 transition-colors flex items-center justify-center gap-2 font-medium active:scale-95"
           >
             <User className="w-5 h-5" />
             <span>Trocar de Conta</span>
