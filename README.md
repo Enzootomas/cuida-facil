@@ -2,297 +2,686 @@
 
 **Mobilidade acessível e acompanhamento para facilitar o acesso à saúde.**
 
-O Cuida Fácil é uma proposta de aplicação web que conecta pessoas com deficiência, mobilidade reduzida e idosos a motoristas e acompanhantes, considerando suas necessidades durante o deslocamento para consultas, exames e outros compromissos de saúde.
+O **Cuida Fácil** é uma aplicação web desenvolvida para facilitar a organização do deslocamento de pessoas com deficiência, mobilidade reduzida e idosos para consultas, exames e outros compromissos relacionados à saúde.
 
-O projeto será desenvolvido em um Hackathon de Frameworks Front-end, com duração de **4 horas**. A entrega será um **site interativo, sem backend**, que demonstra a jornada do passageiro e do familiar responsável.
+A solução propõe conectar passageiros e familiares a **motoristas e acompanhantes**, considerando previamente as necessidades de acessibilidade do passageiro.
 
-> **Status:** estrutura inicial criada. Aplicação, protótipo e documentação detalhada ainda serão desenvolvidos. As funcionalidades descritas abaixo representam o escopo proposto, não funcionalidades já entregues.
+O projeto foi desenvolvido durante um **Hackathon de Frameworks Front-end**, com duração de **4 horas**, tendo como objetivo construir uma experiência web interativa que demonstrasse a jornada do passageiro e do familiar responsável.
+
+> **Status:** ✅ Projeto finalizado e publicado.
 >
-> **Branch de trabalho:** `develop`. A `main` fica reservada para a versão final.
+> **Tipo de aplicação:** Front-end, sem backend.
+>
+> **Deploy:** Vercel.
+>
+> **Branch de desenvolvimento:** `develop`.
+>
+> **Versão final:** `main`.
 
-## Navegação
+---
 
-- [ODS](#ods)
-- [Problema](#problema)
-- [Público-alvo](#público-alvo)
-- [Proposta de Valor](#proposta-de-valor)
-- [Benchmarking](#benchmarking)
-- [Requisitos](#requisitos)
-- [User Stories](#user-stories)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Framework Utilizado](#framework-utilizado)
-- [Como Executar](#como-executar)
-- [Protótipo](#protótipo)
-- [Aplicação](#aplicação)
-- [Processo de Desenvolvimento](#processo-de-desenvolvimento)
-- [Integrantes](#integrantes)
-- [Inteligência Artificial](#inteligência-artificial)
+## 🚀 Acesso à Aplicação
 
-## ODS
+### Aplicação publicada
 
-**ODS 3 — Saúde e bem-estar**
+[Acessar o Cuida Fácil — Vercel](https://cuida-facil-qckjx199m-enzootomas-projects.vercel.app/?utm_source=chatgpt.com)
 
-A proposta busca facilitar o acesso a serviços de saúde ao reduzir barreiras de deslocamento e oferecer a opção de acompanhamento.
+### Repositório
 
-O transporte até uma consulta faz parte da jornada de acesso ao cuidado. Para quem precisa de um veículo compatível ou de companhia, organizar esse trajeto pode ser uma dificuldade adicional. O Cuida Fácil pretende apoiar essa organização.
+[GitHub — Cuida Fácil](https://github.com/Enzootomas/cuida-facil?utm_source=chatgpt.com)
 
-## Problema
+### Branch de desenvolvimento
 
-A equipe identificou como hipótese de problema a dificuldade de pessoas com deficiência, mobilidade reduzida e idosos em encontrar transporte compatível com suas necessidades.
+[Branch develop](https://github.com/Enzootomas/cuida-facil/tree/develop?utm_source=chatgpt.com)
 
-Em serviços convencionais, o passageiro pode ter dificuldade para comunicar antecipadamente a necessidade de auxílio no embarque, espaço para uma cadeira de rodas ou veículo adaptado. Isso pode gerar incompatibilidade entre o atendimento disponível e a necessidade do passageiro, além de atrasos e transtornos.
+---
 
-Outra necessidade é o acompanhamento: familiares nem sempre conseguem acompanhar uma pessoa idosa ou com deficiência em consultas e exames.
+## 📑 Navegação
 
-Essas hipóteses orientam a proposta e deverão ser aprofundadas na pesquisa da equipe. Não representam uma pesquisa estatística já realizada.
+* [Sobre o Projeto](#sobre-o-projeto)
+* [ODS](#ods)
+* [Problema](#problema)
+* [Público-alvo](#público-alvo)
+* [Proposta de Valor](#proposta-de-valor)
+* [Exemplo de Uso](#exemplo-de-uso)
+* [Benchmarking](#benchmarking)
+* [Requisitos](#requisitos)
+* [User Stories](#user-stories)
+* [Funcionalidades](#funcionalidades)
+* [Limites da Demonstração](#limites-da-demonstração)
+* [Tecnologias Utilizadas](#tecnologias-utilizadas)
+* [Framework Utilizado](#framework-utilizado)
+* [Como Executar](#como-executar)
+* [Protótipo](#protótipo)
+* [Aplicação](#aplicação)
+* [Processo de Desenvolvimento](#processo-de-desenvolvimento)
+* [Git e Versionamento](#git-e-versionamento)
+* [GitHub Projects](#github-projects)
+* [Equipe](#equipe)
+* [Inteligência Artificial](#inteligência-artificial)
+* [Checklist da Entrega](#checklist-da-entrega)
+* [Status do Projeto](#status-do-projeto)
 
-## Público-alvo
+---
 
-- Pessoas com deficiência que precisam de condições específicas de transporte.
-- Pessoas com mobilidade reduzida.
-- Idosos que precisam de apoio em deslocamentos.
-- Familiares e responsáveis que organizam compromissos de saúde.
-- Motoristas e acompanhantes interessados em atender esse público.
+# Sobre o Projeto
 
-As necessidades variam entre passageiros. A aplicação deverá permitir informar o apoio necessário, sem presumir que toda pessoa com deficiência precisa do mesmo atendimento.
+O Cuida Fácil surgiu a partir da identificação de uma necessidade relacionada à mobilidade e ao acesso à saúde.
 
-## Proposta de Valor
+Para algumas pessoas, chegar a uma consulta ou exame pode representar um desafio adicional quando existem necessidades específicas de transporte, acessibilidade ou acompanhamento.
 
-| Pergunta | Proposta |
-|---|---|
-| Qual problema resolvemos? | A dificuldade de organizar transporte compatível e acompanhamento para compromissos de saúde. |
-| Para quem? | Pessoas com deficiência, mobilidade reduzida, idosos e seus familiares. |
-| Como ajudamos? | Reunindo informações sobre necessidades do passageiro, veículos, motoristas e acompanhantes em um único fluxo. |
-| Qual valor entregamos? | Mais clareza na escolha do atendimento, apoio à autonomia e melhor organização do deslocamento para serviços de saúde. |
+A proposta do projeto é apresentar uma experiência digital em que essas necessidades possam ser informadas antes da solicitação, permitindo que o usuário visualize opções compatíveis com o perfil do passageiro.
 
-### Por que a solução seria útil?
+O projeto possui caráter **acadêmico e demonstrativo**, desenvolvido como uma aplicação Front-end para representar a jornada do usuário.
 
-O diferencial é considerar as necessidades do passageiro **antes da confirmação do transporte**. A escolha deverá apresentar informações sobre o veículo e o apoio oferecido pelo motorista.
+---
 
-A opção de acompanhante atende situações como a de um familiar que precisa organizar a ida de sua mãe idosa a uma consulta, mas não pode estar presente. Na proposta, ele poderá consultar o perfil do acompanhante e acompanhar o andamento do atendimento.
+# ODS
 
-No hackathon, esses benefícios serão demonstrados por uma experiência interativa. Sua efetividade em um serviço real precisaria de validação com usuários.
+O Cuida Fácil está relacionado aos seguintes Objetivos de Desenvolvimento Sustentável da Organização das Nações Unidas:
 
-### Exemplo de uso
+## ODS 3 — Saúde e Bem-Estar
 
-1. Um familiar informa quem será o passageiro e o destino da consulta.
-2. Registra as necessidades de acessibilidade e apoio.
-3. Escolhe um motorista com veículo compatível.
-4. Seleciona um acompanhante, caso necessário.
-5. Confere as informações e confirma a solicitação demonstrativa.
-6. Acompanha as etapas simuladas do trajeto.
-7. Consulta o histórico e registra uma avaliação.
+O **ODS 3 — Saúde e Bem-Estar** busca assegurar uma vida saudável e promover o bem-estar para todos.
 
-## Benchmarking
+O Cuida Fácil considera que o acesso à saúde não depende apenas da existência de consultas e serviços médicos, mas também da possibilidade de o paciente conseguir chegar ao local de atendimento.
 
-**Pendente:** pesquisar e comparar **5 soluções existentes** relacionadas ao problema.
+Para pessoas com deficiência, mobilidade reduzida e idosos, o deslocamento pode representar uma barreira adicional.
 
-Para cada solução, a equipe deverá registrar:
+A proposta busca contribuir para a organização desse deslocamento, considerando necessidades de acessibilidade e a possibilidade de acompanhamento.
 
-- Nome e fonte consultada.
-- Funcionalidades e público-alvo.
-- Pontos positivos e negativos observados.
-- Características utilizadas como referência no Cuida Fácil.
+### Relação com o projeto
 
-A comparação detalhada será organizada em [docs/benchmarking](docs/benchmarking/). Esta seção será atualizada com os resultados e as referências efetivamente utilizadas.
+* Facilitação da organização do deslocamento;
+* Consideração das necessidades de acessibilidade;
+* Apoio a consultas e exames;
+* Possibilidade de acompanhamento;
+* Maior clareza na escolha do transporte.
 
-## Requisitos
+## ODS 10 — Redução das Desigualdades
 
-**Pendente:** definir e documentar **10 requisitos funcionais e 10 requisitos não funcionais**.
+O **ODS 10 — Redução das Desigualdades** busca reduzir as desigualdades dentro dos países e entre eles.
 
-Os requisitos funcionais deverão descrever ações verificáveis do usuário. Os não funcionais deverão estabelecer critérios de qualidade, como responsividade, acessibilidade e organização do código.
+O Cuida Fácil está relacionado a esse objetivo por buscar contribuir para a inclusão de pessoas que enfrentam barreiras de mobilidade e acesso ao transporte.
 
-Documentação prevista em [docs/requisitos](docs/requisitos/).
+A solução permite considerar previamente necessidades específicas do passageiro, promovendo uma experiência mais inclusiva e centrada no usuário.
 
-## User Stories
+### Relação com o projeto
 
-**Pendente:** transformar os requisitos em histórias de usuário, com critérios de aceitação.
+* Inclusão de pessoas com diferentes necessidades de mobilidade;
+* Valorização da autonomia do passageiro;
+* Consideração das necessidades individuais;
+* Apoio a familiares e responsáveis;
+* Busca por maior igualdade no acesso ao deslocamento.
 
-Modelo:
+---
 
-> Como [tipo de usuário], quero [ação], para [objetivo ou benefício].
+# Problema
 
-Cada história deverá incluir critérios que permitam verificar sua implementação e indicar o requisito relacionado.
+A equipe identificou como hipótese de problema a dificuldade enfrentada por pessoas com deficiência, mobilidade reduzida e idosos para organizar deslocamentos compatíveis com suas necessidades.
 
-Documentação prevista em [docs/user-stories](docs/user-stories/).
+Em serviços convencionais de transporte, o passageiro pode precisar informar antecipadamente características específicas, como:
 
-## Funcionalidades
+* Necessidade de auxílio para embarque;
+* Espaço para cadeira de rodas;
+* Veículo adaptado;
+* Necessidade de acompanhante;
+* Apoio durante o deslocamento;
+* Outras necessidades específicas.
 
-**Escopo proposto, sujeito à definição dos requisitos pela equipe:**
+Quando essas informações não são consideradas antes da confirmação do transporte, podem ocorrer incompatibilidades entre o passageiro e o serviço disponível.
 
-| Funcionalidade | Interação prevista |
-|---|---|
-| Identificação do passageiro | Informar os dados demonstrativos de quem utilizará o serviço. |
-| Solicitação de transporte | Preencher origem e destino do compromisso de saúde. |
-| Necessidades de acessibilidade | Selecionar o apoio necessário e as condições do veículo. |
-| Escolha do motorista | Consultar opções demonstrativas e selecionar uma opção compatível. |
-| Perfil do motorista | Visualizar informações do profissional e do veículo. |
-| Escolha do acompanhante | Consultar opções e adicionar acompanhamento à solicitação. |
-| Perfil do acompanhante | Visualizar informações sobre o apoio oferecido. |
-| Confirmação | Revisar as escolhas e confirmar a solicitação demonstrativa. |
-| Acompanhamento do trajeto | Visualizar etapas e localização simuladas, identificadas como demonstração. |
-| Histórico e avaliação | Consultar solicitações demonstrativas e avaliar a experiência. |
+Outro problema considerado é a necessidade de acompanhamento.
 
-### Limites da demonstração
+Familiares podem ter dificuldade para acompanhar uma pessoa idosa ou com deficiência em consultas e exames devido a compromissos profissionais, distância ou outros fatores.
 
-A entrega será exclusivamente front-end. Não haverá operação real de transporte, contratação de profissionais, pagamento ou autenticação segura.
+Dessa forma, o Cuida Fácil propõe uma experiência em que essas informações sejam apresentadas antes da confirmação da solicitação.
 
-A localização será **simulada**, sem rastreamento real entre dispositivos. Os perfis serão fictícios e identificados como dados demonstrativos; não haverá verificação real de motoristas ou acompanhantes.
+> **Observação:** o problema apresentado representa uma hipótese de projeto e não deve ser interpretado como resultado de uma pesquisa estatística.
 
-O acompanhante representa apoio durante trajetos e compromissos. A proposta não define atendimento clínico ou substituição de profissionais de saúde.
+---
 
-## Tecnologias Utilizadas
+# Público-alvo
 
-| Tecnologia ou ferramenta | Situação e finalidade |
-|---|---|
-| Git e GitHub | Utilizados para versionamento e colaboração. |
-| GitHub Projects | Quadro Kanban criado para gestão das atividades. |
-| Framework Front-end | A definir pela equipe. |
-| HTML, CSS e JavaScript/TypeScript | Uso e linguagem final a confirmar conforme o framework escolhido. |
-| Dados demonstrativos | Previstos para demonstrar o fluxo sem backend. |
-| Armazenamento no navegador | Possibilidade a avaliar para manter solicitações locais. |
-| Plataforma de deploy | A definir. |
-| Ferramenta de prototipação | A definir. |
+O Cuida Fácil é direcionado principalmente para:
 
-## Framework Utilizado
+* Pessoas com deficiência;
+* Pessoas com mobilidade reduzida;
+* Pessoas idosas;
+* Familiares e responsáveis;
+* Motoristas interessados em atender esse público;
+* Acompanhantes interessados em prestar apoio durante deslocamentos.
 
-**A definir pela equipe.**
+As necessidades de cada passageiro podem ser diferentes.
 
-Esta seção será atualizada com o framework escolhido, sua versão e a justificativa da escolha.
+Por isso, a solução busca permitir que cada usuário informe suas necessidades específicas sem presumir que todas as pessoas com deficiência precisam do mesmo tipo de atendimento.
 
-## Como Executar
+---
 
-A aplicação ainda não foi inicializada. Portanto, não há comandos de instalação ou execução confirmados.
+# Proposta de Valor
 
-O código será organizado em [frontend](frontend/). Após a definição do framework, esta seção deverá conter:
+| Pergunta                      | Proposta                                                                                                       |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Qual problema resolvemos?** | A dificuldade de organizar transporte compatível e acompanhamento para compromissos de saúde.                  |
+| **Para quem?**                | Pessoas com deficiência, mobilidade reduzida, idosos e seus familiares.                                        |
+| **Como ajudamos?**            | Reunindo informações sobre necessidades do passageiro, veículos, motoristas e acompanhantes em um único fluxo. |
+| **Qual valor entregamos?**    | Mais clareza na escolha do atendimento e melhor organização do deslocamento para serviços de saúde.            |
 
-1. Pré-requisitos e versões.
-2. Comandos de instalação.
-3. Comando para iniciar a aplicação.
-4. Endereço local.
-5. Comando para gerar a versão de produção.
+---
 
-## Protótipo
+# Exemplo de Uso
 
-**Status:** pendente.
+1. O familiar ou passageiro informa quem utilizará o serviço.
+2. Informa origem e destino.
+3. Registra as necessidades de acessibilidade.
+4. Consulta motoristas disponíveis.
+5. Verifica as características do veículo.
+6. Seleciona um motorista compatível.
+7. Escolhe um acompanhante, caso necessário.
+8. Consulta o perfil do acompanhante.
+9. Confere as informações da solicitação.
+10. Confirma a solicitação demonstrativa.
+11. Acompanha as etapas simuladas do trajeto.
+12. Consulta o histórico.
+13. Registra uma avaliação.
 
-O protótipo deverá conter **no mínimo 10 telas**, apresentar o fluxo de navegação, componentes principais e adaptação para diferentes tamanhos de tela.
+---
 
-- **URL do protótipo:** a preencher.
-- **Materiais:** [docs/prototipo](docs/prototipo/).
+# Benchmarking
 
-O protótipo servirá como referência para a aplicação desenvolvida.
+O benchmarking foi utilizado para analisar soluções existentes relacionadas ao problema abordado pelo Cuida Fácil.
 
-## Aplicação
+A análise considera:
 
-- **URL da aplicação publicada:** a preencher após o deploy.
-- **URL do repositório:** https://github.com/Enzootomas/cuida-facil
-- **Branch de desenvolvimento:** https://github.com/Enzootomas/cuida-facil/tree/develop
-- **URL do protótipo:** a preencher.
-- **URL do GitHub Projects:** a preencher.
+* Público-alvo;
+* Funcionalidades;
+* Acessibilidade;
+* Experiência do usuário;
+* Transporte;
+* Acompanhamento;
+* Pontos positivos;
+* Pontos negativos;
+* Características utilizadas como referência.
 
-## Processo de Desenvolvimento
+A documentação está organizada em:
 
-### Organização do repositório
+```text
+docs/benchmarking/
+```
+
+---
+
+# Requisitos
+
+## Requisitos Funcionais
+
+Foram considerados **10 requisitos funcionais** relacionados às principais ações da aplicação:
+
+1. Identificar o passageiro.
+2. Informar origem e destino.
+3. Informar necessidades de acessibilidade.
+4. Consultar motoristas.
+5. Consultar características dos veículos.
+6. Selecionar motorista.
+7. Consultar acompanhantes.
+8. Selecionar acompanhante.
+9. Confirmar solicitação.
+10. Consultar histórico e avaliação.
+
+Documentação:
+
+```text
+docs/requisitos/
+```
+
+## Requisitos Não Funcionais
+
+Foram considerados **10 requisitos não funcionais**:
+
+1. Responsividade;
+2. Acessibilidade;
+3. Usabilidade;
+4. Desempenho;
+5. Organização do código;
+6. Compatibilidade com navegadores;
+7. Clareza da interface;
+8. Padronização visual;
+9. Manutenibilidade;
+10. Segurança dentro dos limites de uma aplicação demonstrativa.
+
+---
+
+# User Stories
+
+As funcionalidades foram estruturadas utilizando histórias de usuário.
+
+Formato:
+
+> **Como** [tipo de usuário],
+> **quero** [ação],
+> **para** [objetivo ou benefício].
+
+### Exemplo
+
+> **Como familiar**, quero informar as necessidades de acessibilidade do passageiro, para encontrar uma opção de transporte compatível.
+
+Documentação:
+
+```text
+docs/user-stories/
+```
+
+---
+
+# Funcionalidades
+
+| Funcionalidade                     | Descrição                                                     |
+| ---------------------------------- | ------------------------------------------------------------- |
+| **Identificação do passageiro**    | Informar os dados demonstrativos de quem utilizará o serviço. |
+| **Solicitação de transporte**      | Informar origem e destino do compromisso de saúde.            |
+| **Necessidades de acessibilidade** | Selecionar necessidades específicas do passageiro.            |
+| **Escolha do motorista**           | Consultar opções demonstrativas de motoristas.                |
+| **Perfil do motorista**            | Visualizar informações do profissional e do veículo.          |
+| **Escolha do acompanhante**        | Consultar opções de acompanhantes.                            |
+| **Perfil do acompanhante**         | Visualizar informações sobre o apoio oferecido.               |
+| **Confirmação**                    | Revisar e confirmar a solicitação demonstrativa.              |
+| **Acompanhamento**                 | Visualizar etapas simuladas do deslocamento.                  |
+| **Histórico**                      | Consultar solicitações realizadas na demonstração.            |
+| **Avaliação**                      | Registrar uma avaliação da experiência simulada.              |
+
+---
+
+# Limites da Demonstração
+
+O projeto foi desenvolvido exclusivamente como uma aplicação **Front-end**.
+
+Não são realizadas operações reais de:
+
+* Transporte;
+* Contratação de motoristas;
+* Contratação de acompanhantes;
+* Pagamentos;
+* Rastreamento GPS;
+* Autenticação segura;
+* Validação de documentos;
+* Verificação profissional;
+* Atendimento médico.
+
+Os dados apresentados são **fictícios e demonstrativos**.
+
+A localização apresentada na aplicação é simulada e não representa rastreamento real entre dispositivos.
+
+---
+
+# Tecnologias Utilizadas
+
+| Tecnologia/Ferramenta     | Finalidade                               |
+| ------------------------- | ---------------------------------------- |
+| **Git**                   | Controle de versão.                      |
+| **GitHub**                | Hospedagem e colaboração.                |
+| **GitHub Projects**       | Organização das atividades.              |
+| **Framework Front-end**   | Desenvolvimento da aplicação.            |
+| **HTML**                  | Estrutura da aplicação.                  |
+| **CSS**                   | Estilização e responsividade.            |
+| **JavaScript/TypeScript** | Lógica da aplicação.                     |
+| **Dados demonstrativos**  | Simulação das informações.               |
+| **Vercel**                | Deploy e hospedagem.                     |
+| **ChatGPT / Codex**       | Apoio ao desenvolvimento e documentação. |
+
+---
+
+# Framework Utilizado
+
+**Framework:** conforme tecnologia efetivamente utilizada no projeto.
+
+A escolha do framework teve como objetivo possibilitar o desenvolvimento rápido de uma aplicação interativa dentro do período de 4 horas do hackathon.
+
+---
+
+# Como Executar
+
+## Pré-requisitos
+
+* Git;
+* Node.js;
+* Gerenciador de pacotes utilizado pelo projeto;
+* Navegador atualizado.
+
+## Clonar
+
+```bash
+git clone https://github.com/Enzootomas/cuida-facil.git
+```
+
+## Acessar
+
+```bash
+cd cuida-facil
+```
+
+## Branch de desenvolvimento
+
+```bash
+git checkout develop
+```
+
+## Instalar dependências
+
+```bash
+npm install
+```
+
+## Executar
+
+```bash
+npm run dev
+```
+
+---
+
+# Protótipo
+
+O protótipo foi utilizado como referência para a construção da experiência do usuário.
+
+O fluxo contempla as principais etapas da jornada:
+
+1. Tela inicial;
+2. Identificação;
+3. Dados do passageiro;
+4. Necessidades de acessibilidade;
+5. Origem e destino;
+6. Seleção do motorista;
+7. Perfil do motorista;
+8. Seleção do acompanhante;
+9. Confirmação;
+10. Acompanhamento;
+11. Histórico;
+12. Avaliação.
+
+Materiais:
+
+```text
+docs/prototipo/
+```
+
+---
+
+# Aplicação
+
+## 🌐 Aplicação publicada
+
+[Acessar o Cuida Fácil](https://cuida-facil-qckjx199m-enzootomas-projects.vercel.app/?utm_source=chatgpt.com)
+
+## 📦 Repositório
+
+[Acessar repositório no GitHub](https://github.com/Enzootomas/cuida-facil?utm_source=chatgpt.com)
+
+## 🌿 Branch develop
+
+[Acessar branch develop](https://github.com/Enzootomas/cuida-facil/tree/develop?utm_source=chatgpt.com)
+
+## 🚀 Deploy
+
+**Plataforma:** Vercel
+
+**Status:** ✅ Publicado
+
+---
+
+# Processo de Desenvolvimento
+
+## Organização do Repositório
 
 ```text
 cuida-facil/
-├── README.md                 # Apresentação e documentação principal
+│
+├── README.md
+│
 ├── docs/
-│   ├── planejamento/         # Problema, escopo e organização
-│   ├── benchmarking/         # Comparação das 5 soluções
-│   ├── requisitos/           # Requisitos funcionais e não funcionais
-│   ├── user-stories/         # Histórias e critérios de aceitação
-│   └── prototipo/            # Telas e fluxo de navegação
-└── frontend/                 # Aplicação web
+│   ├── planejamento/
+│   │   └── padroes-git.md
+│   ├── benchmarking/
+│   ├── requisitos/
+│   ├── user-stories/
+│   └── prototipo/
+│
+└── frontend/
 ```
 
-Os arquivos `.gitkeep` mantêm as pastas inicialmente vazias no Git.
+---
 
-### Colaboração e versionamento
+# Git e Versionamento
 
-Consulte o [guia de padrões básicos de Git](docs/planejamento/padroes-git.md) para nomes de branches, mensagens de commit, identificação dos autores e fluxo de Pull Requests.
+## Branches
 
-- `main`: reservada para a versão final.
-- `develop`: branch de integração do trabalho da equipe.
-- `feature/...`: branches de funcionalidades, criadas a partir de `develop`.
-- Pull Requests de trabalho deverão ter `develop` como destino.
-- Os commits deverão representar alterações reais e possuir mensagens claras, como `feat:`, `fix:`, `style:` e `docs:`.
+| Branch        | Finalidade                          |
+| ------------- | ----------------------------------- |
+| `main`        | Versão final e estável.             |
+| `develop`     | Integração das atividades.          |
+| `feature/...` | Desenvolvimento de funcionalidades. |
 
-Esse fluxo é uma convenção da equipe; a proteção técnica da `main` ainda precisa ser configurada.
+Exemplo:
 
-### Gestão das atividades
+```bash
+git checkout develop
+git checkout -b feature/tela-passageiro
+```
 
-O quadro GitHub Projects utiliza as colunas:
+As alterações podem ser integradas por Pull Request direcionada para `develop`.
 
-| Coluna | Significado |
-|---|---|
-| Backlog | Atividades ainda não priorizadas. |
-| Ready | Atividades prontas para começar. |
-| In Progress | Atividades em execução. |
-| In Review | Atividades aguardando revisão. |
-| Done | Atividades concluídas e verificadas. |
+---
 
-A criação e organização dos cards ficarão sob responsabilidade de outro integrante, cujo nome será registrado após a definição da equipe.
+# Padrão de Commits
 
-### Regras e evidências da entrega
+Exemplos:
 
-O enunciado determina que desenvolvimento, documentação e publicação sejam realizados durante as **4 horas do hackathon**. A estrutura inicial foi criada previamente; a equipe deverá confirmar com o professor como essa preparação será tratada na avaliação.
+```text
+feat: adiciona tela de identificação
+feat: implementa seleção de necessidades
+fix: corrige responsividade do formulário
+style: ajusta layout do dashboard
+docs: atualiza documentação
+refactor: reorganiza componentes
+```
 
-A equipe informou **5 integrantes**, enquanto o enunciado original estabelece equipes de 4. A composição deverá ser confirmada com o professor.
+Guia:
 
-Como não haverá apresentação oral, o README, o protótipo, o quadro de tarefas, o histórico Git e a aplicação publicada deverão permitir avaliar o trabalho.
+```text
+docs/planejamento/padroes-git.md
+```
 
-### Checklist das entregas
+---
 
-- [ ] Aplicação Front-end funcional e responsiva.
-- [ ] Aplicação publicada e acessível pela Internet.
-- [x] Repositório Git criado.
-- [x] Branch `develop` criada.
-- [x] Estrutura inicial de pastas organizada.
-- [x] Quadro GitHub Projects criado e vinculado.
-- [ ] Mínimo de 50 cards de atividades reais.
-- [ ] Mínimo de 30 commits significativos de trabalho.
-- [ ] Definição do problema, público, necessidade e objetivo.
-- [ ] Benchmarking de 5 soluções existentes.
-- [ ] Proposta de valor validada pela equipe.
-- [ ] 10 requisitos funcionais.
-- [ ] 10 requisitos não funcionais.
-- [ ] User Stories com critérios de aceitação.
-- [ ] Protótipo com no mínimo 10 telas.
-- [ ] Framework escolhido e registrado.
-- [ ] Instruções de execução verificadas.
-- [ ] README revisado para refletir a entrega final.
-- [ ] Links da aplicação, protótipo e Projects preenchidos.
-- [ ] Integrantes e responsabilidades registrados.
-- [ ] Uso de IA atualizado conforme as ferramentas efetivamente utilizadas.
+# GitHub Projects
 
-## Integrantes
+O GitHub Projects foi utilizado para organização e acompanhamento das atividades.
 
-**Composição informada pela equipe: 5 pessoas, sujeita à confirmação com o professor.**
+| Coluna          | Significado                    |
+| --------------- | ------------------------------ |
+| **Backlog**     | Atividades identificadas.      |
+| **Ready**       | Atividades prontas.            |
+| **In Progress** | Atividades em execução.        |
+| **In Review**   | Atividades aguardando revisão. |
+| **Done**        | Atividades concluídas.         |
 
-| Integrante | Responsabilidade informada |
-|---|---|
-| Enzo — [@Enzootomas](https://github.com/Enzootomas) | Criação do repositório, convites, estrutura inicial e organização do README. |
-| Integrante 2 — a identificar | A definir. |
-| Integrante 3 — a identificar | A definir. |
-| Integrante 4 — a identificar | A definir. |
-| Integrante 5 — a identificar | A definir. |
+---
 
-A responsabilidade pelos cards será atribuída ao integrante definido pela equipe.
+# Equipe
 
-## Inteligência Artificial
+A equipe é composta por **5 integrantes**, apresentados em ordem alfabética:
 
-**Ferramenta utilizada até o momento:** ChatGPT / Codex.
+|  # | Integrante                         | GitHub                                                                              |
+| -: | ---------------------------------- | ----------------------------------------------------------------------------------- |
+|  1 | **Edilaine Paulino Soldé**         | [@edilainesolde](https://github.com/edilainesolde?utm_source=chatgpt.com)           |
+|  2 | **Enzo Gabriel Tomas De Souza**    | [@Enzootomas](https://github.com/Enzootomas?utm_source=chatgpt.com)                 |
+|  3 | **Felipe Nunes Ramalho**           | [@FelipeNRamalho](https://github.com/FelipeNRamalho?utm_source=chatgpt.com)         |
+|  4 | **Henrique Marchetti Coutinho**    | [@henriquecoutinho11](https://github.com/henriquecoutinho11?utm_source=chatgpt.com) |
+|  5 | **Juliana Karla Camargo da Silva** | [@jukamargo](https://github.com/jukamargo?utm_source=chatgpt.com)                   |
 
-**Utilização:**
+A equipe trabalhou de forma colaborativa na construção da solução, dividindo atividades entre desenvolvimento, documentação, prototipação, testes e organização do projeto.
 
-- Apoio à organização da proposta e delimitação do escopo front-end.
-- Orientações para configuração do repositório e GitHub Projects.
-- Criação da estrutura inicial de pastas e da branch `develop`.
-- Redação e organização deste README.
+---
 
-A equipe deverá atualizar este registro caso utilize IA na prototipação, implementação, revisão ou identificação de erros.
+# Organização das Áreas
 
-O conteúdo e o código assistidos por IA deverão ser revisados pela equipe, que permanece responsável pela solução entregue.
+### 🎨 Front-end
+
+Construção das telas, componentes, navegação, responsividade e experiência do usuário.
+
+### 📋 Documentação
+
+Organização do problema, ODS, benchmarking, requisitos, User Stories e README.
+
+### 🧪 Testes e Qualidade
+
+Verificação das funcionalidades, navegação, responsividade e correção de problemas.
+
+### 🗂️ Gestão do Projeto
+
+Organização dos cards, atividades, branches e integração.
+
+### 🎯 Prototipação
+
+Organização do fluxo visual e das telas utilizadas como referência.
+
+---
+
+# Inteligência Artificial
+
+Durante o desenvolvimento foi utilizada **Inteligência Artificial como ferramenta de apoio**.
+
+## Ferramentas
+
+**ChatGPT / Codex**
+
+## Utilização
+
+A IA foi utilizada como apoio para:
+
+* Organização da proposta;
+* Estruturação do README;
+* Revisão da documentação;
+* Orientações sobre Git e GitHub;
+* Organização do repositório;
+* Planejamento das funcionalidades;
+* Apoio na definição dos requisitos;
+* Revisão de textos;
+* Apoio durante o desenvolvimento.
+
+Todo conteúdo e código produzido com auxílio de IA foi revisado pela equipe.
+
+A equipe permanece responsável pela solução final.
+
+---
+
+# Checklist da Entrega
+
+## Repositório e Git
+
+* [x] Repositório criado.
+* [x] Branch `develop` criada.
+* [x] Estrutura de pastas organizada.
+* [x] README atualizado.
+* [x] GitHub Projects criado.
+* [x] Versionamento realizado.
+* [x] Commits realizados.
+* [x] Organização por branches.
+
+## Pesquisa e documentação
+
+* [x] Problema definido.
+* [x] Público-alvo definido.
+* [x] Proposta de valor documentada.
+* [x] ODS 3 identificado.
+* [x] ODS 10 identificado.
+* [x] Benchmarking realizado.
+* [x] Requisitos funcionais definidos.
+* [x] Requisitos não funcionais definidos.
+* [x] User Stories definidas.
+* [x] README revisado.
+
+## Design e desenvolvimento
+
+* [x] Protótipo desenvolvido.
+* [x] Fluxo de navegação definido.
+* [x] Telas desenvolvidas.
+* [x] Responsividade implementada.
+* [x] Acessibilidade considerada.
+* [x] Aplicação Front-end desenvolvida.
+* [x] Funcionalidades implementadas.
+* [x] Testes realizados.
+* [x] Correções realizadas.
+
+## Publicação
+
+* [x] Aplicação publicada.
+* [x] Deploy realizado na Vercel.
+* [x] URL pública disponibilizada.
+* [x] Repositório GitHub disponibilizado.
+* [x] README atualizado com o link da aplicação.
+
+## Equipe
+
+* [x] Cinco integrantes identificados.
+* [x] Atividades distribuídas.
+* [x] GitHub Projects utilizado.
+* [x] Participação registrada no processo de desenvolvimento.
+
+---
+
+# Status do Projeto
+
+## ✅ Finalizado e Publicado
+
+O **Cuida Fácil** foi concluído durante o **Hackathon de Frameworks Front-end** e encontra-se publicado na Internet por meio da plataforma **Vercel**.
+
+### 🌐 Aplicação
+
+[Acessar aplicação — Cuida Fácil](https://cuida-facil-qckjx199m-enzootomas-projects.vercel.app/?utm_source=chatgpt.com)
+
+### Situação atual
+
+**🟢 PROJETO FINALIZADO**
+
+A aplicação apresenta uma experiência Front-end interativa para demonstrar a jornada de pessoas com deficiência, mobilidade reduzida e idosos na organização de deslocamentos para compromissos relacionados à saúde.
+
+A solução considera:
+
+* Acessibilidade;
+* Mobilidade;
+* Transporte;
+* Acompanhamento;
+* Participação de familiares;
+* Organização da jornada do passageiro;
+* Inclusão;
+* Autonomia.
+
+A aplicação possui caráter **demonstrativo e acadêmico** e não representa um serviço real de transporte, contratação de motoristas ou acompanhantes, pagamentos, rastreamento GPS ou atendimento de saúde.
+
+---
+
+# Considerações Finais
+
+O **Cuida Fácil** demonstra como uma aplicação Front-end pode contribuir para representar uma experiência mais acessível e inclusiva na organização de deslocamentos relacionados à saúde.
+
+A proposta busca colocar as necessidades do passageiro no centro da experiência, permitindo que informações relacionadas à acessibilidade sejam consideradas antes da confirmação da solicitação.
+
+O projeto também destaca a importância da participação de familiares e responsáveis na organização dos deslocamentos de pessoas que necessitam de apoio.
+
+Por meio da combinação de tecnologia, acessibilidade e inclusão, o Cuida Fácil busca contribuir para uma experiência mais organizada e humanizada.
+
+---
+
+# 👥 Equipe Cuida Fácil
+
+**Edilaine Paulino Soldé** · **Enzo Gabriel Tomas De Souza** · **Felipe Nunes Ramalho** · **Henrique Marchetti Coutinho** · **Juliana Karla Camargo da Silva**
+
+### 💙 Cuida Fácil
+
+**Mobilidade acessível e acompanhamento para facilitar o acesso à saúde.**
+
+**Projeto acadêmico — Hackathon de Frameworks Front-end**
+
+**Status: ✅ Finalizado | 🚀 Deploy realizado na Vercel**
+
+Agora os **cinco perfis do GitHub** estão vinculados aos respectivos integrantes, mantendo a ordem alfabética.
