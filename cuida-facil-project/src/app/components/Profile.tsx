@@ -219,6 +219,25 @@ export function Profile({ onNavigate, currentUser }: ProfileProps) {
             </div>
           )}
         </div>
+
+        {/* Navigation & Logout Buttons */}
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <button
+            onClick={() => onNavigate('landing')}
+            className="flex-1 py-3 px-4 bg-white border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 hover:text-blue-600 transition-colors flex items-center justify-center gap-2 font-medium shadow-sm active:scale-95"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Voltar para Página Inicial</span>
+          </button>
+
+          <button
+            onClick={() => onNavigate('login')}
+            className="py-3 px-4 bg-red-50 border border-red-200 text-red-600 rounded-xl hover:bg-red-100 transition-colors flex items-center justify-center gap-2 font-medium active:scale-95"
+          >
+            <User className="w-5 h-5" />
+            <span>Trocar de Conta</span>
+          </button>
+        </div>
       </div>
     </div>
   );
