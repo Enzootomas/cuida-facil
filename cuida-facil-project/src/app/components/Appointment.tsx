@@ -83,7 +83,7 @@ export function Appointment({ onNavigate, service }: AppointmentProps) {
 
   if (!service) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+      <div className="h-[100dvh] bg-gray-50 flex items-center justify-center p-6">
         <div className="text-center">
           <p className="text-gray-600 mb-4">Nenhum serviço selecionado</p>
           <button
@@ -106,7 +106,7 @@ export function Appointment({ onNavigate, service }: AppointmentProps) {
     const fullAddress = `${formData.street}, ${formData.number}${formData.complement ? ', ' + formData.complement : ''} - ${formData.neighborhood}, ${formData.city} - ${formData.state}`;
     
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+      <div className="h-[100dvh] bg-gray-50 flex items-center justify-center p-6 overflow-y-auto">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 text-center">
           <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <Clock className="w-12 h-12 text-yellow-600" />
@@ -162,9 +162,9 @@ export function Appointment({ onNavigate, service }: AppointmentProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-8">
+    <div className="h-[100dvh] bg-gray-50 flex flex-col overflow-hidden">
       {/* Header */}
-      <div className={`${bgColor} text-white px-4 py-6 sm:p-6 sm:pb-8`}>
+      <div className={`${bgColor} text-white px-4 py-6 sm:p-6 sm:pb-8 flex-shrink-0`}>
         <button
           onClick={() => onNavigate(isCaregiver ? 'caregiver' : 'driver')}
           className="flex items-center gap-2 mb-4 sm:mb-6 active:opacity-70"
@@ -178,6 +178,8 @@ export function Appointment({ onNavigate, service }: AppointmentProps) {
         </p>
       </div>
 
+      {/* Scrollable content */}
+      <div className="flex-1 overflow-y-auto pb-6">
       <div className="max-w-md mx-auto px-4 sm:px-6 -mt-4">
         {/* Professional Info */}
         <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-5 mb-5">
@@ -395,6 +397,7 @@ export function Appointment({ onNavigate, service }: AppointmentProps) {
             </button>
           </div>
         </form>
+      </div>
       </div>
     </div>
   );
