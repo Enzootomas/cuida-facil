@@ -344,3 +344,32 @@ REFERÊNCIAS ANALISADAS
 O benchmarking demonstrou que o diferencial do CuidaFácil não está necessariamente em oferecer uma funcionalidade inexistente no mercado, mas em **integrar diferentes funcionalidades e adaptá-las para um público específico**.
 
 A proposta busca transformar um conjunto de necessidades que normalmente exigiria diferentes soluções em uma experiência única, centrada no usuário e apoiada pelo tutor e pelos profissionais parceiros.
+## 12. Comparação estruturada para a entrega
+
+Pesquisa documental em fontes oficiais consultadas em 07/10/2026 (horário de Brasília). As funcionalidades resumem o material consultado; pontos positivos e limitações são análise da equipe sobre adequação ao problema, sem testes de contratação ou prova de ausência de funcionalidades. Não foi medida a acessibilidade dos concorrentes.
+
+| Solução | Funcionalidades documentadas | Público-alvo | Pontos positivos para nossa proposta | Pontos negativos ou limitações para nossa proposta | Referência para Cuida Fácil |
+|---|---|---|---|---|---|
+| GetNinjas | Pedidos de cuidador, profissionais avaliados e orçamentos | Pessoas e famílias que procuram serviços; profissionais prestadores | Permite comparar propostas e consultar referências | A família ainda precisa avaliar experiência, adequação e disponibilidade; a página consultada não demonstra a jornada integrada de transporte e tutor | Busca de profissionais e apresentação de perfil |
+| Acvida | Cuidadores, assistência residencial e acompanhamento hospitalar | Idosos, pessoas com limitações e famílias | Trata explicitamente necessidades de cuidado e apoio familiar | A oferta depende de contato e avaliação; o material consultado não comprova um fluxo único de corrida sob demanda e acompanhamento por tutor | Vocabulário de cuidado e descrição do apoio oferecido |
+| Uber | Recursos de segurança e compartilhamento de informações da viagem | Passageiros de transporte por aplicativo | Informações da viagem ajudam a comunicar o deslocamento | Recursos de segurança não comprovam compatibilidade de cada veículo com cadeira de rodas; isso precisa ser conferido no atendimento específico | Informações de motorista/veículo e acompanhamento demonstrativo |
+| 99 | Solicitação de viagem e opção de mudar o passageiro para amigo ou familiar | Passageiros e pessoas que organizam viagens para terceiros | Considera a solicitação para outra pessoa | Pedir para terceiro não assegura acompanhamento presencial ou atendimento adaptado; o material consultado não comprova essa integração | Distinção entre solicitante e passageiro |
+| ViaCEP | Consulta de endereço por CEP, JSON/XML e respostas para CEP inválido/inexistente | Desenvolvedores e usuários de formulários que integram o serviço | Pode reduzir digitação de endereço | É uma API de endereço, não um serviço de transporte/cuidado; dependência de rede e erros precisam de tratamento | Referência técnica complementar para preenchimento de endereço |
+
+### Fontes
+
+- [GetNinjas — cuidador de idosos](https://www.getninjas.com.br/categoria/saude/cuidador-de-pessoas/idosos).
+- [Acvida — serviços de cuidadores](https://acvida.com.br/).
+- [Uber — segurança para passageiros](https://www.uber.com/br/pt-br/ride/safety/).
+- [99 — passageiros](https://99app.com/passageiro/).
+- [ViaCEP — documentação oficial](https://viacep.com.br/).
+
+A Acvida identifica concretamente a categoria genérica “serviços especializados em cuidadores” mencionada na análise anterior. ViaCEP é uma solução técnica complementar; os quatro outros exemplos cobrem contratação de apoio e mobilidade.
+
+### Características usadas como referência
+
+A estrutura existente de busca de cuidadores e motoristas, perfis e áreas de solicitação corresponde aos conceitos de descoberta de profissionais, informação prévia e organização de atendimento. A participação do Tutor compõe a proposta de acompanhamento familiar.
+
+A consulta de CEP e o acompanhamento de viagem foram referências conceituais; sua operação completa deve ser conferida no código e nos testes antes de ser declarada implementada. Os recursos demonstrativos não reproduzem rastreamento ou segurança de serviços reais.
+
+As marcas não são parceiras do projeto. Esta complementação foi elaborada com auxílio de ChatGPT / Codex e precisa de revisão da equipe.

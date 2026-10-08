@@ -4,6 +4,12 @@
 
 Organizar a colaboração no hackathon de 4 horas, com responsabilidades claras e evidências de trabalho no repositório e no GitHub Projects.
 
+## Integrantes identificados
+
+Conforme os perfis registrados no PR #101: Edilaine Paulino Soldé (@edilainesolde), Enzo Gabriel Tomas De Souza (@Enzootomas), Felipe Nunes Ramalho (@FelipeNRamalho), Henrique Marchetti Coutinho (@henriquecoutinho11) e Juliana Karla Camargo da Silva (@jukamargo).
+
+As atribuições completas devem ser confirmadas pelos próprios integrantes. Enzo confirmou organização do repositório, documentação e apoio ao deploy; o PR #101 registra contribuição de Edilaine ao README.
+
 ## Responsabilidades
 
 | Integrante | Responsabilidade confirmada | Entregas |
@@ -12,7 +18,7 @@ Organizar a colaboração no hackathon de 4 horas, com responsabilidades claras 
 | Responsável pelo Projects — nome a preencher | Criação e organização dos cards, conforme decisão informada pela equipe | Cards de atividades reais, responsáveis e acompanhamento do quadro. |
 | Demais integrantes — nomes a preencher | Distribuição ainda a definir | Implementação, protótipo, pesquisa, validação e publicação conforme divisão acordada. |
 
-A equipe informou 5 integrantes. Os nomes e a composição autorizada pelo professor deverão ser registrados antes da entrega final.
+A equipe informou 5 integrantes. A distribuição de tarefas e a composição autorizada pelo professor deverão ser registrados antes da entrega final.
 As responsabilidades ainda não acordadas não devem ser tratadas como atribuições confirmadas.
 
 ## Divisão sugerida para a equipe validar

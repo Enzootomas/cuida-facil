@@ -4,7 +4,7 @@
 
 O Cuida Fácil é uma proposta de aplicação web que conecta pessoas com deficiência, mobilidade reduzida e idosos a motoristas e acompanhantes, considerando suas necessidades durante o deslocamento para consultas, exames e outros compromissos de saúde.
 
-O projeto será desenvolvido em um Hackathon de Frameworks Front-end, com duração de **4 horas**. A entrega será um **site interativo, sem backend**, que demonstra a jornada do passageiro e do familiar responsável.
+O projeto faz parte de um Hackathon de Frameworks Front-end, com duração de **4 horas**. A entrega é um **site interativo, sem backend**, que demonstra a jornada do passageiro e do familiar responsável.
 
 > **Status:** frontend publicado na Vercel. O endereço respondeu com HTTP 200 sem autenticação em 08/10/2026. A validação das funcionalidades, da responsividade e das demais entregas continua pendente.
 >
@@ -95,36 +95,15 @@ No hackathon, esses benefícios serão demonstrados por uma experiência interat
 
 ## Benchmarking
 
-**Pendente:** pesquisar e comparar **5 soluções existentes** relacionadas ao problema.
-
-Para cada solução, a equipe deverá registrar:
-
-- Nome e fonte consultada.
-- Funcionalidades e público-alvo.
-- Pontos positivos e negativos observados.
-- Características utilizadas como referência no Cuida Fácil.
-
-A comparação detalhada será organizada em [docs/benchmarking](docs/benchmarking/). Esta seção será atualizada com os resultados e as referências efetivamente utilizadas.
+A [comparação documentada](docs/benchmarking/benchmarking.md) apresenta referências de serviços e mobilidade. A seção 12 organiza **GetNinjas, Acvida, Uber, 99 e ViaCEP**, com funcionalidades, público-alvo, pontos positivos, limitações, fontes e referências para a proposta. ViaCEP é uma referência técnica de endereço. A análise é documental e não representa testes de contratação.
 
 ## Requisitos
 
-**Pendente:** definir e documentar **10 requisitos funcionais e 10 requisitos não funcionais**.
-
-Os requisitos funcionais deverão descrever ações verificáveis do usuário. Os não funcionais deverão estabelecer critérios de qualidade, como responsividade, acessibilidade e organização do código.
-
-Documentação prevista em [docs/requisitos](docs/requisitos/).
+A referência para o hackathon é [Requisitos do Front-end](docs/requisitos/requisitos-hackathon.md), com **10 RF e 10 RNF**, critérios verificáveis e referências de componentes. A documentação de evolução em specs inclui capacidades de backend que não são obrigatórias nesta entrega. A existência do requisito não significa aprovação da implementação.
 
 ## User Stories
 
-**Pendente:** transformar os requisitos em histórias de usuário, com critérios de aceitação.
-
-Modelo:
-
-> Como [tipo de usuário], quero [ação], para [objetivo ou benefício].
-
-Cada história deverá incluir critérios que permitam verificar sua implementação e indicar o requisito relacionado.
-
-Documentação prevista em [docs/user-stories](docs/user-stories/).
+As [10 histórias da demonstração](docs/user-stories/user-stories-hackathon.md) seguem o modelo “Como…, quero…, para…” e possuem critérios de aceitação e vínculo RF01–RF10. Resultados devem ser registrados na [validação](docs/planejamento/validacao-entrega.md).
 
 ## Funcionalidades
 
@@ -162,13 +141,13 @@ O acompanhante representa apoio durante trajetos e compromissos. A proposta não
 | Dados demonstrativos | Previstos para demonstrar o fluxo sem backend. |
 | Armazenamento no navegador | Possibilidade a avaliar para manter solicitações locais. |
 | Vercel | Publicação do frontend a partir da branch main. |
-| Ferramenta de prototipação | A definir. |
+| Figma | Link do protótipo registrado pela equipe. |
 
 ## Framework Utilizado
 
 **React**, com Vite e componentes em TSX. O package.json declara React ^18.3.1, Vite ^6.3.5 e Tailwind CSS ^4.1.12. As versões instaladas são determinadas pelo package-lock.json.
 
-A justificativa da escolha deverá ser registrada pela equipe.
+React permite organizar as interfaces em componentes reutilizáveis e atualizar a demonstração por estado. Vite fornece servidor local e build estático adequado à publicação na Vercel.
 
 ## Como Executar
 
@@ -190,21 +169,16 @@ Consulte o [guia de execução](docs/planejamento/guia-execucao.md) para pré-re
 
 ## Protótipo
 
-**Status:** pendente.
+[Protótipo no Figma](https://www.figma.com/make/AYo2pdm4wNnkSP7RbWTsuI/Mobile-App-for-Caregiver-Matching).
 
-O protótipo deverá conter **no mínimo 10 telas**, apresentar o fluxo de navegação, componentes principais e adaptação para diferentes tamanhos de tela.
-
-- **URL do protótipo:** a preencher.
-- **Materiais:** [docs/prototipo](docs/prototipo/).
-
-O protótipo servirá como referência para a aplicação desenvolvida.
+O [inventário e fluxo de interfaces](docs/prototipo/fluxo-telas.md) descreve as **13 interfaces identificadas no código**, componentes e critérios de adaptação responsiva. A equipe ainda deve confirmar no Figma as 10 telas exigidas, conexões e acesso do professor; a contagem do código não comprova a contagem do protótipo.
 
 ## Aplicação
 
 - **URL da aplicação publicada:** [Cuida Fácil na Vercel](https://cuida-facil-qckjx199m-enzootomas-projects.vercel.app)
 - **URL do repositório:** https://github.com/Enzootomas/cuida-facil
 - **Branch de desenvolvimento:** https://github.com/Enzootomas/cuida-facil/tree/develop
-- **URL do protótipo:** a preencher.
+- **URL do protótipo:** https://www.figma.com/make/AYo2pdm4wNnkSP7RbWTsuI/Mobile-App-for-Caregiver-Matching
 - **URL do GitHub Projects:** a preencher.
 
 ### Configuração do deploy
@@ -284,32 +258,33 @@ Como não haverá apresentação oral, o README, o protótipo, o quadro de taref
 - [ ] Mínimo de 50 cards de atividades reais.
 - [ ] Mínimo de 30 commits significativos de trabalho.
 - [ ] Definição do problema, público, necessidade e objetivo.
-- [ ] Benchmarking de 5 soluções existentes.
+- [x] Comparação documental de 5 soluções, incluindo referência técnica, com fontes e limitações.
 - [ ] Proposta de valor validada pela equipe.
-- [ ] 10 requisitos funcionais.
-- [ ] 10 requisitos não funcionais.
-- [ ] User Stories com critérios de aceitação.
+- [x] 10 requisitos funcionais documentados para o Front-end; validação pendente.
+- [x] 10 requisitos não funcionais documentados; verificação pendente.
+- [x] 10 User Stories do Front-end com critérios de aceitação.
 - [ ] Protótipo com no mínimo 10 telas.
 - [x] Framework escolhido e registrado.
 - [ ] Instruções de execução verificadas.
 - [ ] README revisado para refletir a entrega final.
 - [ ] Links da aplicação, protótipo e Projects preenchidos.
-- [ ] Integrantes e responsabilidades registrados.
+- [x] Cinco integrantes identificados.
+- [ ] Responsabilidades individuais completas.
 - [ ] Uso de IA atualizado conforme as ferramentas efetivamente utilizadas.
 
 ## Integrantes
 
-**Composição informada pela equipe: 5 pessoas, sujeita à confirmação com o professor.**
+Nomes e perfis registrados no PR #101 da equipe:
 
-| Integrante | Responsabilidade informada |
-|---|---|
-| Enzo — [@Enzootomas](https://github.com/Enzootomas) | Criação do repositório, convites, estrutura inicial e organização do README. |
-| Integrante 2 — a identificar | A definir. |
-| Integrante 3 — a identificar | A definir. |
-| Integrante 4 — a identificar | A definir. |
-| Integrante 5 — a identificar | A definir. |
+| Integrante | GitHub | Responsabilidade registrada |
+|---|---|---|
+| Edilaine Paulino Soldé | [@edilainesolde](https://github.com/edilainesolde) | Proposta de revisão do README no PR #101; demais tarefas a confirmar. |
+| Enzo Gabriel Tomas De Souza | [@Enzootomas](https://github.com/Enzootomas) | Repositório, convites, organização, documentação e deploy. |
+| Felipe Nunes Ramalho | [@FelipeNRamalho](https://github.com/FelipeNRamalho) | Registrar tarefas realizadas. |
+| Henrique Marchetti Coutinho | [@henriquecoutinho11](https://github.com/henriquecoutinho11) | Registrar tarefas realizadas. |
+| Juliana Karla Camargo da Silva | [@jukamargo](https://github.com/jukamargo) | Registrar tarefas realizadas. |
 
-A responsabilidade pelos cards será atribuída ao integrante definido pela equipe.
+A composição de cinco pessoas deve ser confirmada com o professor. Não foram atribuídas responsabilidades por suposição.
 
 ## Inteligência Artificial
 
@@ -322,7 +297,12 @@ A responsabilidade pelos cards será atribuída ao integrante definido pela equi
 - Criação da estrutura inicial de pastas e da branch `develop`.
 - Redação e organização deste README e atualização da relação da proposta com os ODS 3 e 10.
 - Orientações de deploy na Vercel, diagnóstico de configuração e atualização da documentação de publicação.
+- Complementação do benchmarking por pesquisa em fontes oficiais, requisitos e histórias do Front-end, inventário de telas e critérios de validação.
 
 A equipe deverá atualizar este registro caso utilize IA na prototipação, implementação, revisão ou identificação de erros.
 
 O conteúdo e o código assistidos por IA deverão ser revisados pela equipe, que permanece responsável pela solução entregue.
+
+## Evidências e pendências
+
+Consulte [Validação da entrega](docs/planejamento/validacao-entrega.md) para registrar testes, conferir cards e commits significativos e acompanhar as informações ainda não confirmadas. Os checkboxes documentais não certificam funcionalidades aprovadas. O site é uma demonstração; não oferece contratação, autenticação segura, pagamento ou GPS real.
