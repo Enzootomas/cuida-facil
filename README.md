@@ -31,11 +31,18 @@ O projeto será desenvolvido em um Hackathon de Frameworks Front-end, com duraç
 
 ## ODS
 
-**ODS 3 — Saúde e bem-estar**
+O Cuida Fácil está relacionado a dois Objetivos de Desenvolvimento Sustentável:
 
-A proposta busca facilitar o acesso a serviços de saúde ao reduzir barreiras de deslocamento e oferecer a opção de acompanhamento.
+| ODS | Relação com a proposta |
+|---|---|
+| **ODS 3 — Saúde e bem-estar** | Facilitar o acesso a consultas, exames e outros serviços de saúde por meio de transporte compatível e acompanhamento. |
+| **ODS 10 — Redução das desigualdades** | Apoiar a inclusão de pessoas com deficiência, mobilidade reduzida e idosos, considerando suas necessidades na escolha do transporte e do acompanhamento. |
 
-O transporte até uma consulta faz parte da jornada de acesso ao cuidado. Para quem precisa de um veículo compatível ou de companhia, organizar esse trajeto pode ser uma dificuldade adicional. O Cuida Fácil pretende apoiar essa organização.
+O transporte até uma consulta faz parte da jornada de acesso ao cuidado. Para quem precisa de um veículo compatível ou de companhia, organizar esse trajeto pode ser uma dificuldade adicional. O Cuida Fácil pretende apoiar essa organização, contribuindo para a proposta do ODS 3.
+
+A relação com o ODS 10 está na redução das barreiras que dificultam a participação e o acesso desse público aos serviços. Informar antecipadamente as necessidades do passageiro e apresentar opções compatíveis busca ampliar sua autonomia e tornar o atendimento mais inclusivo.
+
+Essas relações expressam os objetivos da solução. O protótipo interativo não comprova impacto social; os resultados precisariam ser avaliados com usuários em uma aplicação real.
 
 ## Problema
 
@@ -298,7 +305,7 @@ A responsabilidade pelos cards será atribuída ao integrante definido pela equi
 - Apoio à organização da proposta e delimitação do escopo front-end.
 - Orientações para configuração do repositório e GitHub Projects.
 - Criação da estrutura inicial de pastas e da branch `develop`.
-- Redação e organização deste README.
+- Redação e organização deste README e atualização da relação da proposta com os ODS 3 e 10.
 
 A equipe deverá atualizar este registro caso utilize IA na prototipação, implementação, revisão ou identificação de erros.
 
