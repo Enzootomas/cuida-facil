@@ -438,6 +438,11 @@ Como pessoa usuária da plataforma, quero navegar e concluir tarefas com control
 - **NFR-006 — Manutenibilidade**: a implementação deve ser modular, legível e testável; decisões de produto não especificadas não devem ser codificadas como pressupostos.
 - **NFR-007 — Desempenho**: o desempenho deve ser adequado para uso cotidiano, mas metas, condições de medição e limites quantitativos ainda não foram definidos e devem ser esclarecidos em `/speckit.clarify`.
 
+
+- **NFR-008 — Compatibilidade entre navegadores**: os fluxos principais da demonstração devem funcionar nas versões estáveis de Chrome, Edge e Firefox utilizadas pela equipe na validação. **Critério de verificação**: registrar navegador e versão e executar, em cada um, acesso inicial, navegação, preenchimento de formulário e confirmação simulada, sem erro que impeça concluir o fluxo.
+- **NFR-009 — Reprodutibilidade da execução**: o README deve informar os pré-requisitos, o diretório da aplicação e os comandos necessários para instalar, iniciar e compilar o frontend usando o lockfile versionado. **Critério de verificação**: em uma cópia limpa do repositório, com os pré-requisitos documentados, executar `npm ci`, `npm run dev` e `npm run build`; a instalação e o build devem concluir com sucesso e o servidor deve disponibilizar a aplicação.
+- **NFR-010 — Disponibilidade pública da entrega**: a versão entregue deve estar publicada por HTTPS e ser acessível sem login na plataforma de hospedagem. **Critério de verificação**: abrir o endereço documentado no README em janela anônima, confirmar carregamento dos recursos e navegar pelos fluxos principais sem solicitação de acesso à Vercel. Este requisito verifica a entrega no momento da avaliação e não estabelece garantia de disponibilidade contínua.
+
 ## Entidades principais
 
 - **Conta**: identidade de acesso associada a uma pessoa e a um perfil; inclui dados de autenticação, cujo mecanismo precisa ser esclarecido.
