@@ -116,9 +116,9 @@ export function FindDriver({ onNavigate, onSelect }: FindDriverProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="h-[100dvh] bg-gray-50 flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="bg-green-600 text-white px-4 py-6 sm:p-6 sm:pb-8">
+      <div className="bg-green-600 text-white px-4 py-6 sm:p-6 sm:pb-8 flex-shrink-0">
         <button
           onClick={() => onNavigate('home')}
           className="flex items-center gap-2 mb-4 sm:mb-6 active:opacity-70"
@@ -129,6 +129,9 @@ export function FindDriver({ onNavigate, onSelect }: FindDriverProps) {
         <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">Encontrar Transporte</h1>
         <p className="text-green-100 text-sm sm:text-base">Motoristas parceiros com veículos adaptados</p>
       </div>
+
+      {/* Scrollable content */}
+      <div className="flex-1 overflow-y-auto">
 
       {/* Search by CEP */}
       <div className="max-w-md mx-auto px-4 sm:px-6 -mt-4 mb-6">
@@ -252,6 +255,7 @@ export function FindDriver({ onNavigate, onSelect }: FindDriverProps) {
             ))}
           </div>
         )}
+      </div>
       </div>
     </div>
   );
