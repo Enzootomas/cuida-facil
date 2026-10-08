@@ -7,8 +7,8 @@ interface HomeProps {
 
 export function Home({ onNavigate }: HomeProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white px-4 py-6 sm:p-6 flex flex-col">
-      <div className="max-w-md mx-auto w-full flex-1 flex flex-col justify-between">
+    <div className="h-[100dvh] bg-gradient-to-b from-blue-50 to-white px-4 py-6 sm:p-6 flex flex-col overflow-hidden">
+      <div className="max-w-md mx-auto w-full flex-1 flex flex-col justify-between overflow-y-auto">
         {/* Top Navigation - Back to Landing / Logout */}
         <div className="flex items-center justify-between">
           <button
@@ -73,7 +73,7 @@ export function Home({ onNavigate }: HomeProps) {
         </div>
 
         {/* Footer */}
-        <div className="mt-6 pt-4 sm:mt-8 sm:pt-6 border-t border-gray-200 flex items-center justify-between gap-2">
+        <div className="mt-6 pt-4 sm:mt-8 sm:pt-6 border-t border-gray-200 flex items-center justify-between gap-2 flex-shrink-0">
           <button
             onClick={() => onNavigate('profile')}
             className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-white rounded-xl border border-gray-200 text-gray-700 hover:text-blue-600 hover:border-blue-300 transition-all active:scale-95 shadow-sm"
