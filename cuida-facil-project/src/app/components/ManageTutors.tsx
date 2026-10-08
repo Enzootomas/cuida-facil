@@ -62,35 +62,35 @@ export function ManageTutors({ onNavigate, currentUser }: ManageTutorsProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pb-8">
       {/* Header */}
-      <div className="bg-purple-600 text-white p-6 pb-8">
+      <div className="bg-purple-600 text-white px-4 py-6 sm:p-6 sm:pb-8">
         <button
           onClick={() => onNavigate('profile')}
-          className="flex items-center gap-2 mb-6 active:opacity-70"
+          className="flex items-center gap-2 mb-4 sm:mb-6 active:opacity-70"
         >
-          <ArrowLeft className="w-6 h-6" />
-          <span className="text-lg">Voltar</span>
+          <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          <span className="text-base sm:text-lg">Voltar</span>
         </button>
-        <h1 className="text-white mb-2">Gerenciar Tutores</h1>
-        <p className="text-purple-100">Adicione ou remova tutores responsáveis</p>
+        <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1">Gerenciar Tutores</h1>
+        <p className="text-purple-100 text-sm sm:text-base">Adicione ou remova tutores responsáveis</p>
       </div>
 
-      <div className="max-w-md mx-auto px-6 -mt-4">
+      <div className="max-w-md mx-auto px-4 sm:px-6 -mt-4 mb-8">
         {/* Add Tutor Button */}
         {!showInviteForm && (
           <button
             onClick={() => setShowInviteForm(true)}
-            className="w-full bg-purple-600 text-white rounded-2xl p-5 shadow-lg mb-6 hover:bg-purple-700 transition-colors flex items-center justify-center gap-3"
+            className="w-full bg-purple-600 text-white rounded-2xl p-4 sm:p-5 shadow-lg mb-6 hover:bg-purple-700 transition-colors flex items-center justify-center gap-3 active:scale-95"
           >
-            <UserPlus className="w-6 h-6" />
-            <span className="text-lg">Convidar Tutor</span>
+            <UserPlus className="w-5 h-5 sm:w-6 sm:h-6" />
+            <span className="text-base sm:text-lg font-medium">Convidar Tutor</span>
           </button>
         )}
 
         {/* Invite Form */}
         {showInviteForm && (
-          <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+          <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 mb-6">
             <h3 className="text-gray-900 mb-4">Convidar Novo Tutor</h3>
             <form onSubmit={handleInvite} className="space-y-4">
               <div>

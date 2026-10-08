@@ -69,36 +69,36 @@ export function TutorDashboard({ onNavigate, currentUser }: TutorDashboardProps)
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pb-8">
       {/* Header */}
-      <div className="bg-purple-600 text-white p-6 pb-8">
+      <div className="bg-purple-600 text-white px-4 py-6 sm:p-6 sm:pb-8">
         <button
           onClick={() => onNavigate('login')}
-          className="flex items-center gap-2 mb-6 active:opacity-70"
+          className="flex items-center gap-2 mb-4 sm:mb-6 active:opacity-70"
         >
-          <ArrowLeft className="w-6 h-6" />
-          <span className="text-lg">Sair</span>
+          <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          <span className="text-base sm:text-lg">Sair</span>
         </button>
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-white mb-2">Área do Tutor</h1>
-            <p className="text-purple-100">Olá, {tutor.name}</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1">Área do Tutor</h1>
+            <p className="text-purple-100 text-sm sm:text-base">Olá, {tutor.name}</p>
           </div>
           <button 
             onClick={() => onNavigate('messages')}
-            className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-400 relative"
+            className="w-11 h-11 sm:w-12 sm:h-12 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-400 relative active:scale-95 flex-shrink-0"
           >
-            <MessageCircle className="w-6 h-6 text-white" />
-            <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs flex items-center justify-center">
+            <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+            <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs flex items-center justify-center font-bold">
               2
             </span>
           </button>
         </div>
       </div>
 
-      <div className="max-w-md mx-auto px-6 -mt-4">
+      <div className="max-w-md mx-auto px-4 sm:px-6 -mt-4 mb-8">
         {/* Patient Selector */}
-        <div className="bg-white rounded-2xl shadow-lg p-5 mb-6">
+        <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-5 mb-6">
           <p className="text-gray-600 text-sm mb-2">Paciente selecionado:</p>
           <div className="relative">
             <button

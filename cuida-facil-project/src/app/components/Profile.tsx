@@ -59,28 +59,28 @@ export function Profile({ onNavigate, currentUser }: ProfileProps) {
   const hasPendingRequests = user.pendingTutorRequests && user.pendingTutorRequests.length > 0;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pb-8">
       {/* Header */}
-      <div className="bg-blue-600 text-white p-6 pb-8">
+      <div className="bg-blue-600 text-white px-4 py-6 sm:p-6 sm:pb-8">
         <button
           onClick={() => onNavigate('home')}
-          className="flex items-center gap-2 mb-6 active:opacity-70"
+          className="flex items-center gap-2 mb-4 sm:mb-6 active:opacity-70"
         >
-          <ArrowLeft className="w-6 h-6" />
-          <span className="text-lg">Voltar</span>
+          <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          <span className="text-base sm:text-lg">Voltar</span>
         </button>
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-white mb-2">Meu Perfil</h1>
-            <p className="text-blue-100">Informações pessoais e agendamentos</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1">Meu Perfil</h1>
+            <p className="text-blue-100 text-sm sm:text-base">Informações pessoais e agendamentos</p>
           </div>
           {hasPendingRequests && (
             <button
               onClick={() => onNavigate('tutor-requests')}
-              className="relative w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-400"
+              className="relative w-11 h-11 sm:w-12 sm:h-12 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-400 active:scale-95 flex-shrink-0"
             >
-              <Bell className="w-6 h-6 text-white" />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs flex items-center justify-center">
+              <Bell className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs flex items-center justify-center font-bold">
                 {user.pendingTutorRequests.length}
               </span>
             </button>
@@ -88,9 +88,9 @@ export function Profile({ onNavigate, currentUser }: ProfileProps) {
         </div>
       </div>
 
-      <div className="max-w-md mx-auto px-6 -mt-4">
+      <div className="max-w-md mx-auto px-4 sm:px-6 -mt-4 mb-8">
         {/* User Info */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+        <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 mb-6">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
               <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center">
