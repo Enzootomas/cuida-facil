@@ -12,7 +12,9 @@ import {
   Bell,
   UserPlus,
   X,
-  Save
+  Save,
+  Trash2,
+  ShieldAlert
 } from 'lucide-react';
 import type { View } from '../App';
 
@@ -47,7 +49,7 @@ const mockAppointments = [
   }
 ];
 
-export function Profile({ onNavigate, currentUser, onUpdateUser }: ProfileProps) {
+export function Profile({ onNavigate, currentUser, onUpdateUser, onDeleteUser }: ProfileProps) {
   const defaultUser = {
     name: 'José da Silva',
     phone: '(11) 98765-4321',
@@ -75,6 +77,7 @@ export function Profile({ onNavigate, currentUser, onUpdateUser }: ProfileProps)
 
   const [user, setUser] = useState(() => currentUser || defaultUser);
   const [isEditing, setIsEditing] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   const [editForm, setEditForm] = useState({
     name: user.name || '',
@@ -154,6 +157,15 @@ export function Profile({ onNavigate, currentUser, onUpdateUser }: ProfileProps)
     setIsEditing(false);
   };
 
+  const handleConfirmDelete = () => {
+    setShowDeleteConfirm(false);
+    if (onDeleteUser) {
+      onDeleteUser();
+    } else {
+      onNavigate('landing');
+    }
+  };
+
   const hasPendingRequests = user.pendingTutorRequests && user.pendingTutorRequests.length > 0;
 
   return (
@@ -223,6 +235,35 @@ export function Profile({ onNavigate, currentUser, onUpdateUser }: ProfileProps)
               <MapPin className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
               <span className="text-sm">{user.address || 'Endereço não informado'}</span>
             </div>
+          </div>
+        </div>
+
+        {/* Account Management Card (Editar e Excluir Perfil) */}
+        <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+          <div className="flex items-center gap-2 mb-2">
+            <ShieldAlert className="w-5 h-5 text-gray-600" />
+            <h3 className="font-semibold text-gray-900">Gerenciar Perfil</h3>
+          </div>
+          <p className="text-gray-500 text-sm mb-4">
+            Atualize seus dados cadastrais ou encerre sua conta neste dispositivo.
+          </p>
+
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={handleOpenEdit}
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold rounded-xl transition-all active:scale-98"
+            >
+              <Edit className="w-4 h-4 text-blue-600" />
+              <span>Editar Perfil</span>
+            </button>
+
+            <button
+              onClick={() => setShowDeleteConfirm(true)}
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-red-50 hover:bg-red-100 text-red-600 font-semibold rounded-xl border border-red-200 transition-all active:scale-98"
+            >
+              <Trash2 className="w-4 h-4 text-red-600" />
+              <span>Excluir Perfil Atual</span>
+            </button>
           </div>
         </div>
 
@@ -468,6 +509,38 @@ export function Profile({ onNavigate, currentUser, onUpdateUser }: ProfileProps)
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {showDeleteConfirm && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 text-center animate-scale-up">
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 text-red-600">
+              <Trash2 className="w-8 h-8" />
+            </div>
+
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Excluir Perfil Atual?</h3>
+            <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+              Tem certeza que deseja excluir o perfil de <strong className="text-gray-900">{user.name}</strong>?
+              Esta ação é <strong>irreversível</strong> e removerá todos os seus dados e agendamentos.
+            </p>
+
+            <div className="flex flex-col gap-2.5">
+              <button
+                onClick={handleConfirmDelete}
+                className="w-full py-3 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl text-sm transition-colors active:scale-95 shadow-md shadow-red-200"
+              >
+                Sim, excluir perfil
+              </button>
+              <button
+                onClick={() => setShowDeleteConfirm(false)}
+                className="w-full py-3 px-4 border-2 border-gray-200 hover:bg-gray-100 text-gray-700 font-semibold rounded-xl text-sm transition-colors"
+              >
+                Cancelar
+              </button>
+            </div>
           </div>
         </div>
       )}
