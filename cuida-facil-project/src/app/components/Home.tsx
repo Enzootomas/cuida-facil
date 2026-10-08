@@ -1,4 +1,4 @@
-import { Heart, Car, User } from 'lucide-react';
+import { Heart, Car, User, ArrowLeft, LogOut } from 'lucide-react';
 import type { View } from '../App';
 
 interface HomeProps {
@@ -9,8 +9,29 @@ export function Home({ onNavigate }: HomeProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white px-4 py-6 sm:p-6 flex flex-col">
       <div className="max-w-md mx-auto w-full flex-1 flex flex-col justify-between">
+        {/* Top Navigation - Back to Landing / Logout */}
+        <div className="flex items-center justify-between">
+          <button
+            onClick={() => onNavigate('landing')}
+            className="flex items-center gap-1.5 text-gray-600 hover:text-blue-600 transition-colors py-2 px-3 rounded-xl hover:bg-white/80 active:scale-95 text-sm font-medium"
+            title="Voltar para a página inicial"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Início</span>
+          </button>
+
+          <button
+            onClick={() => onNavigate('login')}
+            className="flex items-center gap-1.5 text-gray-500 hover:text-red-600 transition-colors py-2 px-3 rounded-xl hover:bg-white/80 active:scale-95 text-sm font-medium"
+            title="Trocar de perfil ou sair"
+          >
+            <LogOut className="w-4 h-4" />
+            <span>Trocar conta</span>
+          </button>
+        </div>
+
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 mt-4 sm:mt-8">
+        <div className="text-center mb-8 sm:mb-12 mt-2 sm:mt-4">
           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-md">
             <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
           </div>
@@ -52,13 +73,22 @@ export function Home({ onNavigate }: HomeProps) {
         </div>
 
         {/* Footer */}
-        <div className="mt-6 pt-4 sm:mt-8 sm:pt-6 border-t border-gray-200">
+        <div className="mt-6 pt-4 sm:mt-8 sm:pt-6 border-t border-gray-200 flex items-center justify-between gap-2">
           <button
             onClick={() => onNavigate('profile')}
-            className="w-full flex items-center justify-center gap-2 sm:gap-3 py-3 sm:py-4 text-gray-600 hover:text-blue-600 transition-colors active:scale-95"
+            className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-white rounded-xl border border-gray-200 text-gray-700 hover:text-blue-600 hover:border-blue-300 transition-all active:scale-95 shadow-sm"
           >
-            <User className="w-5 h-5 sm:w-6 sm:h-6" />
-            <span className="text-base sm:text-lg font-medium">Meu Perfil</span>
+            <User className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+            <span className="text-sm sm:text-base font-semibold">Meu Perfil</span>
+          </button>
+
+          <button
+            onClick={() => onNavigate('landing')}
+            className="flex items-center justify-center gap-1.5 py-3 px-4 text-gray-500 hover:text-gray-800 transition-colors active:scale-95 text-sm"
+            title="Ir para a apresentação inicial"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Página Inicial</span>
           </button>
         </div>
       </div>
