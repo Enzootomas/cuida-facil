@@ -11,8 +11,11 @@ import {
   User,
   Bell,
   Edit,
+  Trash2,
   X,
-  Save
+  Check,
+  Save,
+  ShieldAlert
 } from 'lucide-react';
 import type { View } from '../App';
 
@@ -75,7 +78,7 @@ const completedJobs = [
 
 const pendingRequestsCount = 2;
 
-export function PartnerProfile({ onNavigate, currentUser, onUpdateUser }: PartnerProfileProps) {
+export function PartnerProfile({ onNavigate, currentUser, onUpdateUser, onDeleteUser }: PartnerProfileProps) {
   const defaultPartner = {
     name: 'Maria Silva',
     phone: '(11) 99999-1111',
@@ -94,6 +97,8 @@ export function PartnerProfile({ onNavigate, currentUser, onUpdateUser }: Partne
 
   const [partner, setPartner] = useState(() => currentUser || defaultPartner);
   const [isEditing, setIsEditing] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [notification, setNotification] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
   const [editForm, setEditForm] = useState({
     name: partner.name || '',
@@ -171,6 +176,22 @@ export function PartnerProfile({ onNavigate, currentUser, onUpdateUser }: Partne
     setPartner(updated);
     onUpdateUser?.(updated);
     setIsEditing(false);
+    setNotification({
+      type: 'success',
+      message: 'Perfil de parceiro atualizado com sucesso!'
+    });
+    setTimeout(() => {
+      setNotification(null);
+    }, 4000);
+  };
+
+  const handleConfirmDelete = () => {
+    setShowDeleteConfirm(false);
+    if (onDeleteUser) {
+      onDeleteUser();
+    } else {
+      onNavigate('landing');
+    }
   };
 
   const thisMonthEarnings = 'R$ 2.400,00';
@@ -236,6 +257,22 @@ export function PartnerProfile({ onNavigate, currentUser, onUpdateUser }: Partne
       </div>
 
       <div className="max-w-md mx-auto px-6 -mt-4 space-y-6">
+        {/* Notification Toast */}
+        {notification && (
+          <div className="bg-green-500 text-white px-4 py-3 rounded-xl shadow-lg flex items-center justify-between animate-fade-in">
+            <div className="flex items-center gap-3">
+              <Check className="w-5 h-5 flex-shrink-0" />
+              <span className="text-sm font-medium">{notification.message}</span>
+            </div>
+            <button
+              onClick={() => setNotification(null)}
+              className="p-1 hover:bg-green-600 rounded-lg transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
         {/* Profile Card */}
         <div className="bg-white rounded-2xl shadow-lg p-6">
           <div className="flex items-center justify-between mb-4">
@@ -309,6 +346,39 @@ export function PartnerProfile({ onNavigate, currentUser, onUpdateUser }: Partne
               </div>
               <p className={`text-lg font-bold ${isCaregiver ? 'text-blue-700' : 'text-green-700'}`}>{completedThisMonth}</p>
             </div>
+          </div>
+        </div>
+
+        {/* Account Management Card (Editar / Excluir) */}
+        <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+          <div className="flex items-center gap-2 mb-2">
+            <ShieldAlert className="w-5 h-5 text-gray-600" />
+            <h3 className="font-semibold text-gray-900">Gerenciar Perfil Profissional</h3>
+          </div>
+          <p className="text-gray-500 text-sm mb-4">
+            Atualize seus dados de cadastro ou exclua o seu perfil de parceiro.
+          </p>
+
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={handleOpenEdit}
+              className={`w-full flex items-center justify-center gap-2 py-3 px-4 font-semibold rounded-xl transition-all active:scale-98 ${
+                isCaregiver
+                  ? 'bg-blue-50 hover:bg-blue-100 text-blue-700'
+                  : 'bg-green-50 hover:bg-green-100 text-green-700'
+              }`}
+            >
+              <Edit className="w-4 h-4" />
+              <span>Editar Perfil</span>
+            </button>
+
+            <button
+              onClick={() => setShowDeleteConfirm(true)}
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-red-50 hover:bg-red-100 text-red-600 font-semibold rounded-xl border border-red-200 transition-all active:scale-98"
+            >
+              <Trash2 className="w-4 h-4 text-red-600" />
+              <span>Excluir Perfil Atual</span>
+            </button>
           </div>
         </div>
 
@@ -552,6 +622,38 @@ export function PartnerProfile({ onNavigate, currentUser, onUpdateUser }: Partne
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {showDeleteConfirm && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 text-center animate-scale-up">
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 text-red-600">
+              <Trash2 className="w-8 h-8" />
+            </div>
+
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Excluir Perfil Atual?</h3>
+            <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+              Tem certeza que deseja excluir seu perfil profissional de <strong className="text-gray-900">{partner.name}</strong>?
+              Esta ação é <strong>irreversível</strong> e você não receberá mais solicitações.
+            </p>
+
+            <div className="flex flex-col gap-2.5">
+              <button
+                onClick={handleConfirmDelete}
+                className="w-full py-3 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl text-sm transition-colors active:scale-95 shadow-md shadow-red-200"
+              >
+                Sim, excluir perfil
+              </button>
+              <button
+                onClick={() => setShowDeleteConfirm(false)}
+                className="w-full py-3 px-4 border-2 border-gray-200 hover:bg-gray-100 text-gray-700 font-semibold rounded-xl text-sm transition-colors"
+              >
+                Cancelar
+              </button>
+            </div>
           </div>
         </div>
       )}
