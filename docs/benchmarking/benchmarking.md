@@ -1,0 +1,375 @@
+# Benchmarking — CuidaFácil
+
+## 1. Objetivo
+
+O benchmarking do projeto **CuidaFácil** foi realizado com o objetivo de identificar soluções existentes que apresentam funcionalidades relacionadas à contratação de profissionais, cuidados com pessoas idosas ou com mobilidade reduzida, transporte, localização e acompanhamento de serviços.
+
+A análise permitiu compreender como outras plataformas estruturam seus serviços, quais funcionalidades são relevantes para os usuários e quais oportunidades podem ser exploradas pelo CuidaFácil.
+
+O benchmarking não teve como objetivo reproduzir soluções existentes, mas utilizar referências do mercado para identificar boas práticas e desenvolver uma proposta adequada às necessidades identificadas durante a concepção do projeto.
+
+---
+
+## 2. Critérios de análise
+
+Para realizar o benchmarking, foram considerados os seguintes critérios:
+
+* Facilidade de utilização;
+* Busca e contratação de profissionais;
+* Solicitação de serviços;
+* Disponibilidade dos profissionais;
+* Agendamento;
+* Aceite ou recusa de solicitações;
+* Localização e endereço;
+* Transporte;
+* Comunicação entre usuários e profissionais;
+* Acompanhamento por familiares ou responsáveis;
+* Acessibilidade;
+* Segurança e confiabilidade;
+* Experiência do usuário.
+
+---
+
+## 3. Soluções analisadas
+
+Foram utilizadas como referências soluções que possuem relação direta ou indireta com a proposta do CuidaFácil.
+
+### 3.1 GetNinjas
+
+O GetNinjas foi considerado como referência por trabalhar com a conexão entre clientes e profissionais que oferecem diferentes tipos de serviços.
+
+### Funcionalidades observadas
+
+* Busca por profissionais;
+* Solicitação de serviços;
+* Conexão entre cliente e profissional;
+* Apresentação de informações sobre o prestador;
+* Possibilidade de contratação.
+
+### Contribuição para o CuidaFácil
+
+A principal referência obtida foi o modelo de **conexão entre quem necessita de um serviço e quem está disponível para realizá-lo**.
+
+No CuidaFácil, esse conceito foi adaptado para um contexto específico de cuidado e mobilidade, permitindo que o usuário encontre profissionais que atuem como cuidadores ou motoristas.
+
+---
+
+## 3.2 Serviços especializados em cuidadores
+
+Empresas e plataformas especializadas em cuidadores de idosos foram analisadas como referência para compreender como o mercado apresenta serviços de assistência.
+
+### Funcionalidades observadas
+
+* Oferta de profissionais especializados;
+* Serviços de acompanhamento;
+* Assistência para pessoas idosas;
+* Organização de profissionais;
+* Atendimento conforme a necessidade do usuário.
+
+### Contribuição para o CuidaFácil
+
+Essas soluções contribuíram para a definição do perfil **Parceiro**, que representa o profissional responsável pela prestação do serviço.
+
+O CuidaFácil amplia essa proposta ao permitir que o parceiro também possa atuar como **motorista**, contemplando necessidades relacionadas à mobilidade.
+
+---
+
+## 3.3 Uber
+
+O modelo de transporte sob demanda utilizado pela Uber foi analisado como referência para o funcionamento das solicitações de transporte.
+
+### Funcionalidades observadas
+
+* Solicitação de transporte;
+* Localização;
+* Disponibilidade de motoristas;
+* Aceite da solicitação;
+* Informações sobre o profissional;
+* Acompanhamento do serviço.
+
+### Contribuição para o CuidaFácil
+
+O principal conceito aproveitado foi o fluxo de:
+
+**Solicitação → disponibilidade → aceite → confirmação → realização do serviço.**
+
+No CuidaFácil, esse fluxo foi adaptado para atender usuários que podem necessitar de maior assistência durante o deslocamento.
+
+---
+
+## 3.4 99
+
+A 99 também foi considerada como referência no segmento de mobilidade.
+
+### Funcionalidades observadas
+
+* Solicitação de viagens;
+* Cadastro de informações do usuário;
+* Motoristas parceiros;
+* Informações sobre o serviço;
+* Comunicação relacionada à viagem.
+
+### Contribuição para o CuidaFácil
+
+A análise contribuiu para a definição do fluxo de solicitação de transporte e para a organização das informações necessárias para que um motorista possa aceitar e realizar um atendimento.
+
+---
+
+## 3.5 Google Maps
+
+O Google Maps foi considerado como referência relacionada à localização e utilização de endereços.
+
+### Funcionalidades observadas
+
+* Localização;
+* Endereço;
+* Rotas;
+* Identificação de regiões;
+* Informações geográficas.
+
+### Contribuição para o CuidaFácil
+
+A necessidade de localização é importante para o funcionamento do serviço, pois o profissional precisa saber onde o atendimento será realizado.
+
+Por esse motivo, o CuidaFácil utiliza informações de endereço como:
+
+* CEP;
+* Logradouro;
+* Número;
+* Complemento;
+* Bairro;
+* Cidade;
+* Estado;
+* Ponto de referência.
+
+---
+
+## 3.6 ViaCEP
+
+O ViaCEP foi utilizado como referência tecnológica para facilitar o preenchimento de endereços.
+
+### Funcionalidade observada
+
+A API permite consultar informações de endereço utilizando o CEP informado pelo usuário.
+
+### Contribuição para o CuidaFácil
+
+A utilização do CEP permite reduzir o preenchimento manual de informações e diminuir a possibilidade de erros no cadastro.
+
+Ao informar o CEP, o sistema pode preencher automaticamente informações como:
+
+* Logradouro;
+* Bairro;
+* Cidade;
+* Estado.
+
+Essa funcionalidade também contribui para uma experiência mais simples, principalmente considerando o público-alvo do projeto.
+
+---
+
+# 4. Tabela comparativa
+
+| Critério                           | GetNinjas | Serviços de cuidadores | Uber    | 99      | Google Maps | CuidaFácil |
+| ---------------------------------- | --------- | ---------------------- | ------- | ------- | ----------- | ---------- |
+| Busca de profissionais             | ✓         | ✓                      | ✓       | ✓       | —           | ✓          |
+| Contratação de profissionais       | ✓         | ✓                      | ✓       | ✓       | —           | ✓          |
+| Cuidador                           | —         | ✓                      | —       | —       | —           | ✓          |
+| Motorista                          | ✓         | —                      | ✓       | ✓       | —           | ✓          |
+| Agendamento                        | ✓         | ✓                      | ✓       | ✓       | —           | ✓          |
+| Aceite/recusa                      | ✓         | ✓                      | ✓       | ✓       | —           | ✓          |
+| Localização                        | —         | ✓                      | ✓       | ✓       | ✓           | ✓          |
+| Endereço por CEP                   | —         | —                      | —       | —       | —           | ✓          |
+| Comunicação                        | ✓         | ✓                      | ✓       | ✓       | —           | ✓          |
+| Acompanhamento por tutor           | —         | —                      | —       | —       | —           | ✓          |
+| Foco em idosos/mobilidade reduzida | —         | ✓                      | —       | —       | —           | ✓          |
+| Integração cuidado + transporte    | —         | Parcial                | —       | —       | —           | ✓          |
+| Acessibilidade como prioridade     | Parcial   | Parcial                | Parcial | Parcial | Parcial     | ✓          |
+
+**Observação:** a tabela representa uma análise funcional e conceitual realizada para o desenvolvimento do projeto. O símbolo "✓" indica que a característica possui relação com a solução analisada; não significa necessariamente que todas as plataformas ofereçam a funcionalidade exatamente da mesma maneira.
+
+---
+
+# 5. Análise dos resultados
+
+A análise das soluções demonstrou que existem diversas plataformas capazes de solucionar partes do problema identificado pelo CuidaFácil.
+
+Entretanto, essas funcionalidades geralmente aparecem distribuídas entre diferentes tipos de serviços.
+
+Por exemplo:
+
+* plataformas de serviços facilitam a contratação de profissionais;
+* plataformas especializadas oferecem cuidadores;
+* aplicativos de mobilidade oferecem transporte;
+* sistemas de mapas trabalham com localização;
+* APIs de endereço facilitam o preenchimento de dados.
+
+A partir dessa análise, identificou-se uma oportunidade para reunir essas necessidades em uma única solução direcionada a pessoas que precisam de **cuidados, acompanhamento ou auxílio para mobilidade**.
+
+---
+
+# 6. Diferencial do CuidaFácil
+
+O principal diferencial identificado no benchmarking é a integração de diferentes necessidades dentro de uma mesma aplicação.
+
+O CuidaFácil trabalha com três perfis principais:
+
+### Usuário
+
+Pessoa que necessita de um cuidador ou motorista e realiza a solicitação do serviço.
+
+### Tutor
+
+Pessoa de confiança autorizada pelo usuário para acompanhar informações relacionadas aos serviços contratados.
+
+O tutor pode acompanhar:
+
+* Solicitações;
+* Agendamentos;
+* Profissionais;
+* Informações do serviço;
+* Comunicação com o parceiro.
+
+### Parceiro
+
+Profissional responsável pela prestação do serviço.
+
+Pode atuar como:
+
+* Cuidador;
+* Motorista.
+
+Essa estrutura cria um fluxo diferente das soluções analisadas, pois permite que o cuidado não fique restrito apenas à relação entre usuário e profissional.
+
+---
+
+# 7. Oportunidades identificadas
+
+A partir do benchmarking, foram identificadas as seguintes oportunidades para o desenvolvimento do CuidaFácil:
+
+### 7.1 Centralização
+
+Reunir cuidado, transporte, agendamento e comunicação em uma única aplicação.
+
+### 7.2 Participação da família
+
+Permitir que uma pessoa de confiança acompanhe os serviços por meio do perfil de Tutor.
+
+### 7.3 Acessibilidade
+
+Desenvolver uma interface pensando nas dificuldades que pessoas idosas ou com mobilidade reduzida podem encontrar durante a utilização de sistemas digitais.
+
+### 7.4 Simplificação do cadastro
+
+Utilizar o CEP para facilitar o preenchimento do endereço e reduzir erros.
+
+### 7.5 Comunicação
+
+Permitir comunicação entre os envolvidos no serviço, facilitando o alinhamento entre usuário, tutor e parceiro.
+
+### 7.6 Segurança e confiança
+
+Apresentar informações do profissional e permitir que o usuário tenha maior controle sobre quem realizará o serviço.
+
+---
+
+# 8. Diferencial competitivo
+
+Com base no benchmarking realizado, o CuidaFácil apresenta como proposta de diferencial a combinação de:
+
+> **Cuidado + Mobilidade + Agendamento + Tutor + Comunicação + Acessibilidade**
+
+Essa integração busca atender não apenas à necessidade de contratar um profissional, mas também à necessidade de proporcionar maior **autonomia, segurança e acompanhamento** ao usuário.
+
+---
+
+# 9. Conclusão
+
+O benchmarking permitiu identificar que existem soluções consolidadas para contratação de profissionais, transporte, localização e prestação de serviços de cuidado.
+
+Entretanto, a análise também demonstrou uma oportunidade de integração dessas funcionalidades em uma solução direcionada especificamente para pessoas idosas ou com mobilidade reduzida
+
+O CuidaFácil utiliza as boas práticas observadas nas soluções analisadas, mas adapta o conceito para uma necessidade específica: facilitar o acesso a **cuidadores e motoristas**, permitindo também que um **Tutor** acompanhe o usuário e os serviços contratados.
+
+Dessa forma, o benchmarking contribuiu para a definição das funcionalidades, dos perfis de usuários e da proposta de valor do projeto.
+
+O resultado é uma solução que busca tornar o processo de contratação e acompanhamento de serviços de cuidado e mobilidade mais **simples, acessível, organizado e seguro**.
+
+---
+
+## 10. Relação do benchmarking com o CuidaFácil
+
+```text
+REFERÊNCIAS ANALISADAS
+          │
+          ├── Plataformas de serviços
+          │       ↓
+          │   Busca e contratação
+          │
+          ├── Serviços de cuidadores
+          │       ↓
+          │   Assistência especializada
+          │
+          ├── Aplicativos de mobilidade
+          │       ↓
+          │   Solicitação e transporte
+          │
+          ├── Sistemas de localização
+          │       ↓
+          │   Endereço e localização
+          │
+          └── APIs de endereço
+                  ↓
+              Facilidade no cadastro
+                       │
+                       ▼
+                ┌─────────────┐
+                │  CuidaFácil  │
+                └─────────────┘
+                       │
+        ┌──────────────┼──────────────┐
+        ▼              ▼              ▼
+     Usuário         Tutor         Parceiro
+        │              │              │
+        └──────────────┼──────────────┘
+                       ▼
+             Cuidado + Mobilidade
+                       │
+                       ▼
+                 Mais autonomia
+                 e acompanhamento
+```
+
+## 11. Síntese
+
+O benchmarking demonstrou que o diferencial do CuidaFácil não está necessariamente em oferecer uma funcionalidade inexistente no mercado, mas em **integrar diferentes funcionalidades e adaptá-las para um público específico**.
+
+A proposta busca transformar um conjunto de necessidades que normalmente exigiria diferentes soluções em uma experiência única, centrada no usuário e apoiada pelo tutor e pelos profissionais parceiros.
+## 12. Comparação estruturada para a entrega
+
+Pesquisa documental em fontes oficiais consultadas em 07/10/2026 (horário de Brasília). As funcionalidades resumem o material consultado; pontos positivos e limitações são análise da equipe sobre adequação ao problema, sem testes de contratação ou prova de ausência de funcionalidades. Não foi medida a acessibilidade dos concorrentes.
+
+| Solução | Funcionalidades documentadas | Público-alvo | Pontos positivos para nossa proposta | Pontos negativos ou limitações para nossa proposta | Referência para Cuida Fácil |
+|---|---|---|---|---|---|
+| GetNinjas | Pedidos de cuidador, profissionais avaliados e orçamentos | Pessoas e famílias que procuram serviços; profissionais prestadores | Permite comparar propostas e consultar referências | A família ainda precisa avaliar experiência, adequação e disponibilidade; a página consultada não demonstra a jornada integrada de transporte e tutor | Busca de profissionais e apresentação de perfil |
+| Acvida | Cuidadores, assistência residencial e acompanhamento hospitalar | Idosos, pessoas com limitações e famílias | Trata explicitamente necessidades de cuidado e apoio familiar | A oferta depende de contato e avaliação; o material consultado não comprova um fluxo único de corrida sob demanda e acompanhamento por tutor | Vocabulário de cuidado e descrição do apoio oferecido |
+| Uber | Recursos de segurança e compartilhamento de informações da viagem | Passageiros de transporte por aplicativo | Informações da viagem ajudam a comunicar o deslocamento | Recursos de segurança não comprovam compatibilidade de cada veículo com cadeira de rodas; isso precisa ser conferido no atendimento específico | Informações de motorista/veículo e acompanhamento demonstrativo |
+| 99 | Solicitação de viagem e opção de mudar o passageiro para amigo ou familiar | Passageiros e pessoas que organizam viagens para terceiros | Considera a solicitação para outra pessoa | Pedir para terceiro não assegura acompanhamento presencial ou atendimento adaptado; o material consultado não comprova essa integração | Distinção entre solicitante e passageiro |
+| ViaCEP | Consulta de endereço por CEP, JSON/XML e respostas para CEP inválido/inexistente | Desenvolvedores e usuários de formulários que integram o serviço | Pode reduzir digitação de endereço | É uma API de endereço, não um serviço de transporte/cuidado; dependência de rede e erros precisam de tratamento | Referência técnica complementar para preenchimento de endereço |
+
+### Fontes
+
+- [GetNinjas — cuidador de idosos](https://www.getninjas.com.br/categoria/saude/cuidador-de-pessoas/idosos).
+- [Acvida — serviços de cuidadores](https://acvida.com.br/).
+- [Uber — segurança para passageiros](https://www.uber.com/br/pt-br/ride/safety/).
+- [99 — passageiros](https://99app.com/passageiro/).
+- [ViaCEP — documentação oficial](https://viacep.com.br/).
+
+A Acvida identifica concretamente a categoria genérica “serviços especializados em cuidadores” mencionada na análise anterior. ViaCEP é uma solução técnica complementar; os quatro outros exemplos cobrem contratação de apoio e mobilidade.
+
+### Características usadas como referência
+
+A estrutura existente de busca de cuidadores e motoristas, perfis e áreas de solicitação corresponde aos conceitos de descoberta de profissionais, informação prévia e organização de atendimento. A participação do Tutor compõe a proposta de acompanhamento familiar.
+
+A consulta de CEP e o acompanhamento de viagem foram referências conceituais; sua operação completa deve ser conferida no código e nos testes antes de ser declarada implementada. Os recursos demonstrativos não reproduzem rastreamento ou segurança de serviços reais.
+
+As marcas não são parceiras do projeto. Esta complementação foi elaborada com auxílio de ChatGPT / Codex e precisa de revisão da equipe.
