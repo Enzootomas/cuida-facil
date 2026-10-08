@@ -1,5 +1,7 @@
 # Especificação Funcional: CuidaFácil
 
+> **Escopo do hackathon:** a entrega atual é exclusivamente Front-end. Consulte [requisitos da demonstração](../../docs/requisitos/requisitos-hackathon.md) e [histórias de usuário](../../docs/user-stories/user-stories-hackathon.md). As exigências de API, persistência no servidor, autenticação e segurança deste documento descrevem evolução futura e não capacidades entregues pela demonstração.
+
 **Feature Branch**: `001-cuida-facil`
 **Criada**: 2026-10-07
 **Status**: Draft
