@@ -62,9 +62,9 @@ export function Messages({ onNavigate, userType }: MessagesProps) {
 
   if (selectedChat === null) {
     return (
-      <div className="min-h-screen bg-gray-50 pb-8">
+      <div className="h-[100dvh] bg-gray-50 flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="bg-blue-600 text-white px-4 py-6 sm:p-6 sm:pb-8">
+        <div className="bg-blue-600 text-white px-4 py-6 sm:p-6 sm:pb-8 flex-shrink-0">
           <button
             onClick={() => onNavigate(getBackView())}
             className="flex items-center gap-2 mb-4 sm:mb-6 active:opacity-70"
@@ -76,6 +76,7 @@ export function Messages({ onNavigate, userType }: MessagesProps) {
           <p className="text-blue-100 text-sm sm:text-base">Suas conversas</p>
         </div>
 
+        <div className="flex-1 overflow-y-auto">
         <div className="max-w-md mx-auto px-4 sm:px-6 -mt-4 mb-8">
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
             {conversations.map((conv, index) => (
@@ -110,6 +111,7 @@ export function Messages({ onNavigate, userType }: MessagesProps) {
             ))}
           </div>
         </div>
+        </div>
       </div>
     );
   }
@@ -117,9 +119,9 @@ export function Messages({ onNavigate, userType }: MessagesProps) {
   const currentConv = conversations.find(c => c.id === selectedChat);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="h-[100dvh] bg-gray-50 flex flex-col">
       {/* Chat Header */}
-      <div className="bg-blue-600 text-white px-3 sm:px-4 py-3">
+      <div className="bg-blue-600 text-white px-3 sm:px-4 py-3 flex-shrink-0">
         <div className="flex items-center justify-between max-w-md mx-auto">
           <button
             onClick={() => setSelectedChat(null)}
